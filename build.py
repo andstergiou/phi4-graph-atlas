@@ -48,7 +48,8 @@ TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
 META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
-        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'fac', 'sym', 'comp')
+        'orbit', 'aut', 'prim', 'On', 'tensor', 'graph', 'onepi', 'vr', 'fac', 'sym',
+        'comp')
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
@@ -77,7 +78,13 @@ NOTE = (
     'beta.  Propagator structures also carry sym: whether the graph is '
     'symmetric under exchanging its two external legs.  The registry is '
     'unoriented, so an asymmetric graph appears once and stands for both '
-    'orientations.')
+    'orientations.  Every structure carries aut, the order of its automorphism '
+    'group with the external legs held fixed and parallel lines included '
+    '(the symmetry factor is 1/aut), and prim, true for a primitive graph: '
+    '1PI with no UV subdivergence, so its counterterm is a single 1/epsilon '
+    'pole.  For a propagator a subgraph whose contraction leaves a scaleless '
+    'graph does not count, so the lowest-order propagator structure is '
+    'primitive and no other is.')
 
 
 def extract_data(html):

@@ -18,7 +18,8 @@ graph and comes with
   (V = 1PI vertex structures, D = leg-dressed, S = propagator structures),
 - the tensor contraction and the O(n) value,
 - the β and counterterm (Z) coefficients, and γ where it contributes,
-- the stabiliser and orbit size of the graph's symmetry,
+- the symmetry factor S = 1/|Aut|, and the stabiliser and orbit size of the graph's symmetry,
+- whether the graph is primitive,
 - a TikZ export of the drawing exactly as it appears on screen.
 
 **Non-factorisable only** hides the structures whose tensor really splits into lower
@@ -34,6 +35,26 @@ the accidental zero at five loops, a structure with no cut vertex whose β happe
 vanish. In particular the 439 leg-dressed structures that survive are precisely the
 dressed structures with β ≠ 0, and the 807 undressed structures with a cut vertex all
 have β = 0. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
+
+**Primitive only** keeps the primitive graphs: 1PI with no UV subdivergence, so the
+counterterm is a single 1/ε pole. There are 61 — 60 vertex structures (1, 0, 1, 1, 3, 10,
+44 at L = 1…7) and the sunset S2.1. For a propagator, a subgraph whose contraction leaves a
+scaleless graph does not count; that is what keeps the sunset, and every propagator
+structure from three loops on has a subdivergence that does count. The flag was checked
+against Schnetz's period table. Each of the 45 vertex graphs obtained by deleting a vertex
+of a completed primitive in `Periods` (L ≤ 7) is flagged, with β = 2(−1)<sup>L+1</sup>·S·P.
+The other 15 are product graphs, whose completion has a three-vertex cut: β is the same
+multiple of a product of periods (f₃², f₃f₅, f₅², f₃f₇, f₃³), and the table leaves these
+graphs out. Every primitive has a single-pole counterterm, and among the 1PI structures
+nothing else does. The one structure with a single pole that is not primitive is D2.3, the
+tree vertex with the sunset on one leg: it is not 1PI, and its only divergence is the
+primitive self-energy it carries (Z<sub>λ</sub> = 1/(6ε), β = 1/12 = γ<sub>φ</sub> of S2.1).
+
+Every structure shows its **symmetry factor** S = 1/|Aut|, on its list row and in the
+details pane. Automorphisms are counted with the external legs held fixed and parallel
+lines included, so S = 1/2 for V1.1 and 1/6 for S2.1. Letting the legs move multiplies
+|Aut| by exactly |stab|. Both counts were checked against an independent networkx count
+on all 6117 structures.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the
@@ -69,7 +90,7 @@ at two loops.
 
 ## The data
 
-The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 8.7 MB, 0.8 MB gzipped —
+The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 9.0 MB, 0.8 MB gzipped —
 served next to the page, so it can be fetched directly:
 
 ```
@@ -83,7 +104,7 @@ one document:
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
-| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `aut`, `prim`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
 
@@ -92,8 +113,9 @@ loop orders and is the registry number the atlas displays. Two reducibility flag
 structure: `vr` is the raw topology (the internal graph has a cut vertex), and `fac` is
 what the "non-factorisable only" filter hides, so the same cut can be made on the data:
 `[s for s in d['structures'] if not s['fac']]`. Propagator structures
-also carry `sym`, true when the graph is symmetric under exchanging its two external legs. They differ exactly on the leg-dressed
-structures, as described above. The L = 7 entries agree
+also carry `sym`, true when the graph is symmetric under exchanging its two external legs. `vr` and `fac` differ exactly on the leg-dressed
+structures, as described above. Every structure carries `aut`, the |Aut| above (its
+symmetry factor is `1/aut`), and `prim`, the primitive flag. The L = 7 entries agree
 with `renorm_L7.json` expression for expression.
 
 ```python

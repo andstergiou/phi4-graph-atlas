@@ -76,6 +76,14 @@ asymmetric graph's γ<sub>φ</sub> is the coefficient of G<sup>ij</sup> + G<sup>
 normalised this way, each pure wave-function renormalisation — a tree-level vertex with
 one self-energy S on one leg — has β equal to γ<sub>φ</sub> of S, for all 439 of them.
 
+The **O(n) value** belongs to a single term of the orbit, like the tensor shown. A structure's
+contribution at O(n) is therefore coefficient × orbit × O(n) value / 3<sup>V</sup>, where V is its
+number of vertices (L + 1 for a vertex structure, L for a propagator) and each 1/3 comes from
+λ<sub>ijkl</sub> = g(δ<sub>ij</sub>δ<sub>kl</sub> + δ<sub>ik</sub>δ<sub>jl</sub> + δ<sub>il</sub>δ<sub>jk</sub>)/3.
+For V1.1 that is 1 × 3 × (n + 8)/9 = (n + 8)/3. Summed over the structures at a loop order it
+gives the O(n) β and γ<sub>φ</sub> — for instance −(3n + 14)/3 and (n + 2)/36 at two loops.
+`gamma_phi_On` in the export is already this contribution for each propagator structure.
+
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the
 one-loop beta structure, V1.1.

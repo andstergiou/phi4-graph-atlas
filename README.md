@@ -18,6 +18,14 @@ graph and comes with
 - the stabiliser and orbit size of the graph's symmetry,
 - a TikZ export of the drawing exactly as it appears on screen.
 
+**Non-factorisable only** hides the one-vertex-reducible structures: those whose
+internal graph has a cut vertex, so the tensor factorises through a single vertex.
+That leaves 4051 of the 6117 — 1, 2, 7, 23, 107, 552, 3359 at L = 1…7. Every
+leg-dressed structure (all 1230) and every propagator chain (all 29) is of this kind,
+and the 807 undressed ones all have vanishing β under minimal subtraction: the single
+structure with β = 0 that survives the filter is V5.60, the accidental zero at five
+loops. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
+
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph
@@ -45,12 +53,14 @@ one document:
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
-| `structures` | one record each: `id`, `L`, `kind`, `num`, `label`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `comp` |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `label`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
 
 Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique across
-loop orders and is the registry number the atlas displays. The L = 7 entries agree
+loop orders and is the registry number the atlas displays. `vr` is the
+one-vertex-reducible flag the "non-factorisable only" filter uses, so the same cut can
+be made on the data: `[s for s in d['structures'] if not s['vr']]`. The L = 7 entries agree
 with `renorm_L7.json` expression for expression.
 
 ```python

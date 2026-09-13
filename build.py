@@ -48,7 +48,7 @@ TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
 META = ('id', 'L', 'kind', 'num', 'label', 'seq', 'edges', 'ext', 'stab',
-        'orbit', 'On', 'tensor', 'graph', 'onepi', 'comp')
+        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'comp')
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
@@ -64,7 +64,12 @@ NOTE = (
     'carry beta, beta_z and Z_lambda; two-point structures carry '
     'Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the '
     'structure id, which is unique across all loop orders and matches the '
-    'registry number shown in the atlas.')
+    'registry number shown in the atlas.  vr marks the one-vertex-reducible '
+    'structures: the internal graph has a cut vertex, so the tensor factorises '
+    'through a single vertex.  Every leg-dressed structure and every propagator '
+    'chain is of this kind; the undressed ones all have vanishing beta under '
+    'minimal subtraction.  The atlas can hide them all with its '
+    '"non-factorisable only" filter.')
 
 
 def extract_data(html):

@@ -16,7 +16,7 @@ graph and comes with
 
 - its number in Schnetz's enumeration
   (V = 1PI vertex structures, D = leg-dressed, S = propagator structures),
-- the tensor contraction and the O(n) value,
+- the tensor contraction and the O(N) value,
 - the β and counterterm (Z) coefficients, and γ where it contributes,
 - the symmetry factor S = 1/|Aut|, and |stab| and orbit, which say how the tensor behaves
   under permuting its external indices,
@@ -76,12 +76,12 @@ asymmetric graph's γ<sub>φ</sub> is the coefficient of G<sup>ij</sup> + G<sup>
 normalised this way, each pure wave-function renormalisation — a tree-level vertex with
 one self-energy S on one leg — has β equal to γ<sub>φ</sub> of S, for all 439 of them.
 
-The **O(n) value** belongs to a single term of the orbit, like the tensor shown. A structure's
-contribution at O(n) is therefore coefficient × orbit × O(n) value / 3<sup>V</sup>, where V is its
+The **O(N) value** belongs to a single term of the orbit, like the tensor shown. A structure's
+contribution at O(N) is therefore coefficient × orbit × O(N) value / 3<sup>V</sup>, where V is its
 number of vertices (L + 1 for a vertex structure, L for a propagator) and each 1/3 comes from
 λ<sub>ijkl</sub> = g(δ<sub>ij</sub>δ<sub>kl</sub> + δ<sub>ik</sub>δ<sub>jl</sub> + δ<sub>il</sub>δ<sub>jk</sub>)/3.
-For V1.1 that is 1 × 3 × (n + 8)/9 = (n + 8)/3. Summed over the structures at a loop order it
-gives the O(n) β and γ<sub>φ</sub> — for instance −(3n + 14)/3 and (n + 2)/36 at two loops.
+For V1.1 that is 1 × 3 × (N + 8)/9 = (N + 8)/3. Summed over the structures at a loop order it
+gives the O(N) β and γ<sub>φ</sub> — for instance −(3N + 14)/3 and (N + 2)/36 at two loops.
 `gamma_phi_On` in the export is already this contribution for each propagator structure.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
@@ -133,9 +133,9 @@ It holds all loop orders in one document:
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
 | `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `aut`, `prim`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
-| `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id (`gamma_phi_On`: both orientations at O(n)) |
+| `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id (`gamma_phi_On`: both orientations at O(N)) |
 
-Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique across
+Expressions are sympy-readable strings in `n` (the N of O(N)) and `epsilon`; `id` is unique across
 loop orders and is the registry number the atlas displays. Two reducibility flags travel with each
 structure: `vr` is the raw topology (the internal graph has a cut vertex), and `fac` is
 what the "non-factorisable only" filter hides, so the same cut can be made on the data:
@@ -196,7 +196,7 @@ package [HyperlogProcedures](https://github.com/oliverschnetz/HyperlogProcedures
 version 0.8, and the seven-loop calculation it implements. The coefficients displayed
 here are not copied from the package: they are recomputed structure by structure by
 tensorial minimal subtraction, in an independent Python implementation, and checked
-against the published O(n)-symmetric results.
+against the published O(N)-symmetric results.
 
 The structures and coefficients were extracted from HyperlogProcedures and recomputed
 with **Claude Fable 5.1**.

@@ -18,7 +18,8 @@ graph and comes with
   (V = 1PI vertex structures, D = leg-dressed, S = propagator structures),
 - the tensor contraction and the O(n) value,
 - the β and counterterm (Z) coefficients, and γ where it contributes,
-- the symmetry factor S = 1/|Aut|, and the stabiliser and orbit size of the graph's symmetry,
+- the symmetry factor S = 1/|Aut|, and |stab| and orbit, which say how the tensor behaves
+  under permuting its external indices,
 - whether the graph is primitive,
 - a TikZ export of the drawing exactly as it appears on screen.
 
@@ -55,6 +56,16 @@ details pane. Automorphisms are counted with the external legs held fixed and pa
 lines included, so S = 1/2 for V1.1 and 1/6 for S2.1. Letting the legs move multiplies
 |Aut| by exactly |stab|. Both counts were checked against an independent networkx count
 on all 6117 structures.
+
+**|stab| and orbit** describe how a vertex structure's tensor behaves under permuting its
+external indices. |stab| is the number of permutations of i j k l that leave the tensor
+unchanged, which are exactly the leg permutations realised by an automorphism of the graph;
+orbit = 24/|stab| is the number of distinct tensors the permutations produce. β multiplies
+the sum of those orbit terms. Z<sub>λ</sub>
+multiplies the average over all 24 permutations, which is that sum divided by orbit; so
+Z<sub>λ</sub>/orbit is the coefficient of the same sum as β, and β<sub>L</sub> = L times its 1/ε residue.
+V1.1, λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 permutations, has |stab| = 8 and
+orbit = 3, and its Z<sub>λ</sub> = 3/ε is a residue of 1 per orbit term, giving β = 1.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the

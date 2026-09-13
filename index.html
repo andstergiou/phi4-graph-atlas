@@ -107,6 +107,7 @@ dt{color:var(--muted);letter-spacing:.03em;text-transform:uppercase;font-size:11
 dt .sym{text-transform:none;font-family:var(--serif);font-size:13px;letter-spacing:0}
 dd{margin:0;overflow-wrap:anywhere}
 dd.math{font-family:var(--serif);font-size:15px}
+dd .why{display:block;font:11.5px/1.4 var(--sans);color:var(--muted);margin-top:2px}
 dd.mono{font-family:var(--mono);font-size:12px;line-height:1.6}
 dd.copyable{position:relative;padding-right:42px}
 dd.copyable .tex{position:absolute;right:0;top:0;opacity:0;transition:opacity .12s;font:500 10.5px var(--sans);letter-spacing:.03em;padding:2px 6px;border:1px solid var(--line);border-radius:3px;background:var(--panel);color:var(--muted);cursor:pointer}
@@ -152,7 +153,7 @@ dd.copyable .tex:hover{border-color:var(--accent);color:var(--accent-ink)}
 <header>
   <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β<sub>ijkl</sub></span> and <span class="sym">γ<sub>φ</sub></span></small></h1>
   <button class="about-toggle" id="about" type="button" aria-expanded="false">Conventions and sources</button>
-  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so <span class="hat">β</span> = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1). S&nbsp;=&nbsp;1/|Aut| is the symmetry factor, automorphisms counted with the external legs held fixed and parallel lines included.</div>
+  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so <span class="hat">β</span> = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1). S&nbsp;=&nbsp;1/|Aut| is the symmetry factor, automorphisms counted with the external legs held fixed and parallel lines included. |stab| counts the permutations of ijkl leaving the tensor unchanged, orbit = 24/|stab| its distinct terms; β multiplies their sum, Z<sub>λ</sub> the sum ÷ orbit.</div>
   <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and every coefficient shown here were extracted and recomputed by tensorial minimal subtraction (MS-bar) with Claude Fable 5.1. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (9.0 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
   <div class="rowbreak"></div>
   <div class="tabs" id="tabs" role="tablist"></div>
@@ -313,6 +314,13 @@ function tensor(s){ return s.replace(/L\^\{([a-z0-9?]+)\}/g,'λ<sub>$1</sub>'); 
 const G = t => '<span class="sym">'+t+'</span>';   // Greek inside a small-caps label
 const symf = s => s.aut === 1 ? '1' : '1/' + s.aut;                 // symmetry factor
 const NPT = 4 === 3 ? 'three-point' : 'four-point';          // the vertex structures
+function stabWhy(s){                                                   // |stab| and orbit in words
+  const n = s.stab*s.orbit, idx = EXT.join('');
+  const fix = s.stab === 1 ? 'Only the identity among the '+n+' permutations of '+idx+' leaves the tensor unchanged'
+                           : s.stab+' of the '+n+' permutations of '+idx+' leave the tensor unchanged';
+  if (s.orbit === 1) return 'All '+n+' permutations of '+idx+' leave the tensor unchanged, so it is a single term, multiplied by both β and Z<sub>λ</sub>.';
+  return fix + ', so it has '+s.orbit+' distinct terms: β multiplies their sum, Z<sub>λ</sub> their sum ÷ '+s.orbit+'.';
+}
 function prettyN(s){ return pretty(s).replace(/\bn\b/g,'N'); }   // O(N) polynomials: capital N
 
 // ---- list ----
@@ -550,7 +558,7 @@ function details(s){
     if (s.beta_z && s.beta_z!==s.beta) h.push('<dt>'+G('β')+' ('+G('ζ')+' notation)</dt>'+copyable(s.beta_z, pretty(s.beta_z), 'math'));
     h.push('<dt>Z'+G('<sub>λ</sub>')+'</dt>'+copyable(s.Z, pretty(s.Z), 'math'));
     h.push('<dt>symmetry factor</dt><dd class="math" title="1/|Aut|, automorphisms with the external legs held fixed, parallel lines included">'+symf(s)+'</dd>');
-    h.push('<dt>|stab| · orbit</dt><dd>'+s.stab+' · '+s.orbit+'</dd>');
+    h.push('<dt>|stab| · orbit</dt><dd>'+s.stab+' · '+s.orbit+'<span class="why">'+stabWhy(s)+'</span></dd>');
   } else {
     h.push('<dt>'+G('γ<sub>φ</sub>')+'</dt>'+copyable(s.gamma, pretty(s.gamma), 'math'));
     h.push('<dt>'+G('γ<sub>φ</sub>')+' at O(N)</dt>'+copyable(String(s.gammaOn).replace(/\bn\b/g,'N'), prettyN(s.gammaOn), 'math'));

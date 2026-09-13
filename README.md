@@ -21,17 +21,27 @@ graph and comes with
 - the stabiliser and orbit size of the graph's symmetry,
 - a TikZ export of the drawing exactly as it appears on screen.
 
-**Non-factorisable only** hides the one-vertex-reducible structures: those whose
-internal graph has a cut vertex, so the tensor factorises through a single vertex.
-That leaves 4051 of the 6117 — 1, 2, 7, 23, 107, 552, 3359 at L = 1…7. Every
-leg-dressed structure (all 1230) and every propagator chain (all 29) is of this kind,
-and the 807 undressed ones all have vanishing β under minimal subtraction: the single
-structure with β = 0 that survives the filter is V5.60, the accidental zero at five
-loops. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
+**Non-factorisable only** hides the structures whose tensor really splits into lower
+ones: an undressed structure whose internal graph has a cut vertex, a propagator chain,
+and a leg-dressed structure whose core is factorisable or whose leg carries a chain of
+insertions. A β contribution from wave-function renormalisation is kept as long as the
+self-energy inserted, and the core it dresses, are themselves irreducible. That leaves
+5054 of the 6117 — 1, 3, 9, 31, 140, 706, 4164 at L = 1…7. Of the 1230 leg-dressed
+structures 1003 survive; the 227 dropped are 133 with a factorisable core and 94
+carrying a chain of insertions on one leg, and all 29 propagator chains go.
+
+The 807 undressed structures with a cut vertex, which the filter also removes, all have
+vanishing β under minimal subtraction — the single structure with β = 0 that survives is
+V5.60, the accidental zero at five loops. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the
 one-loop beta structure, V1.1.
+
+Every expression in the details pane can be copied as LaTeX: hover it and a **TeX**
+button appears, putting the formula on the clipboard in standard syntax
+(`\frac`, `\varepsilon`, `\zeta_{5,3}`, `\lambda_{ikab}`, `f^{(6)}_{2,9}`), ready to
+paste into a paper.
 
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
@@ -60,14 +70,16 @@ one document:
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
-| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `comp` |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
 
 Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique across
-loop orders and is the registry number the atlas displays. `vr` is the
-one-vertex-reducible flag the "non-factorisable only" filter uses, so the same cut can
-be made on the data: `[s for s in d['structures'] if not s['vr']]`. The L = 7 entries agree
+loop orders and is the registry number the atlas displays. Two reducibility flags travel with each
+structure: `vr` is the raw topology (the internal graph has a cut vertex), and `fac` is
+what the "non-factorisable only" filter hides, so the same cut can be made on the data:
+`[s for s in d['structures'] if not s['fac']]`. They differ exactly on the leg-dressed
+structures, as described above. The L = 7 entries agree
 with `renorm_L7.json` expression for expression.
 
 ```python

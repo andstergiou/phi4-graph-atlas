@@ -48,7 +48,7 @@ TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
 META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
-        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'comp')
+        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'fac', 'comp')
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
@@ -65,12 +65,15 @@ NOTE = (
     'carry beta, beta_z and Z_lambda; two-point structures carry '
     'Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the '
     'structure id, which is unique across all loop orders and matches the '
-    'registry number shown in the atlas.  vr marks the one-vertex-reducible '
-    'structures: the internal graph has a cut vertex, so the tensor factorises '
-    'through a single vertex.  Every leg-dressed structure and every propagator '
-    'chain is of this kind; the undressed ones all have vanishing beta under '
-    'minimal subtraction.  The atlas can hide them all with its '
-    '"non-factorisable only" filter.')
+    'registry number shown in the atlas.  Two reducibility flags: vr is the raw '
+    'topology -- the internal graph has a cut vertex -- while fac is what the '
+    'atlas hides under "non-factorisable only": a structure whose tensor really '
+    'splits into lower ones.  They differ on the leg-dressed structures, where a '
+    'dressing always makes a cut vertex but the beta contribution of a '
+    'wave-function renormalisation still counts as irreducible so long as the '
+    'self-energy inserted, and the core it dresses, are themselves irreducible; '
+    'a chain of insertions on one leg, or a factorisable core, makes it '
+    'factorisable.')
 
 
 def extract_data(html):

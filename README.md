@@ -44,6 +44,10 @@ button appears, putting the formula on the clipboard in standard syntax
 (`\frac`, `\varepsilon`, `\zeta_{5,3}`, `\lambda_{ikab}`, `f^{(6)}_{2,9}`), ready to
 paste into a paper.
 
+On a phone the page becomes a single scrolling column — the list, then the graph, then its
+details — with the conventions and sources behind a toggle. Tapping a structure brings its
+graph into view, and the TeX buttons stay visible since there is no hover.
+
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph

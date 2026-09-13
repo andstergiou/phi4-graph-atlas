@@ -35,6 +35,8 @@ header h1{font-family:var(--serif);font-weight:400;font-size:22px;margin:0;lette
 .prov a{color:var(--accent-ink)}
 .dl{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);text-decoration:none;white-space:nowrap}
 .dl:hover{border-color:var(--accent);color:var(--accent-ink)}
+.hat{position:relative;display:inline-block}
+.hat::after{content:"\02C6";position:absolute;left:0;right:0;top:-.18em;text-align:center;line-height:1;pointer-events:none}   /* a spacing circumflex, which the fonts do carry */
 header h1 small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:10px;letter-spacing:.04em;text-transform:uppercase}
 header h1 small .sym{text-transform:none;font-family:var(--serif);font-size:13px;letter-spacing:0}
 .rowbreak{flex-basis:100%;height:0;margin:0}
@@ -149,7 +151,7 @@ dd.copyable .tex:hover{border-color:var(--accent);color:var(--accent-ink)}
 <header>
   <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β<sub>ijkl</sub></span> and <span class="sym">γ<sub>φ</sub></span></small></h1>
   <button class="about-toggle" id="about" type="button" aria-expanded="false">Conventions and sources</button>
-  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so β̂ = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1).</div>
+  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so <span class="hat">β</span> = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1).</div>
   <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and every coefficient shown here were extracted and recomputed by tensorial minimal subtraction (MS-bar) with Claude Fable 5.1. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (8.8 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
   <div class="rowbreak"></div>
   <div class="tabs" id="tabs" role="tablist"></div>

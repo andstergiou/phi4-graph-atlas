@@ -12,7 +12,7 @@ minimal subtraction (MS-bar).
 order 1, 4, 11, 41, 176, 875 and 5009 at L = 1…7. Each one is drawn as a Feynman
 graph and comes with
 
-- its label in the project's tables and its number in Schnetz's ordering
+- its number in Schnetz's enumeration
   (V = 1PI vertex structures, D = leg-dressed, S = propagator structures),
 - the tensor contraction and the O(n) value,
 - the β and counterterm (Z) coefficients, and γ where it contributes,
@@ -40,7 +40,7 @@ at two loops.
 
 ## The data
 
-The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 8.8 MB, 0.8 MB gzipped —
+The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 8.7 MB, 0.8 MB gzipped —
 served next to the page, so it can be fetched directly:
 
 ```
@@ -54,7 +54,7 @@ one document:
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
-| `structures` | one record each: `id`, `L`, `kind`, `num`, `label`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `comp` |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
 

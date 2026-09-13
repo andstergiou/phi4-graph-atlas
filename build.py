@@ -47,7 +47,7 @@ TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 # Names the renorm_L*.json files use, so the export lines up with them.
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
-META = ('id', 'L', 'kind', 'num', 'label', 'seq', 'edges', 'ext', 'stab',
+META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
         'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'comp')
 
 NOTE = (

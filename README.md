@@ -29,6 +29,38 @@ factor 1/(16π²) absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<su
 2 permutations with coefficient 1 and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub>
 at two loops.
 
+## The data
+
+The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 8.8 MB, 0.8 MB gzipped —
+served next to the page, so it can be fetched directly:
+
+```
+curl -O https://andstergiou.github.io/phi4-graph-atlas/phi4_atlas.json
+```
+
+It follows the shape of the project's `renorm_L*.json` files, with all loop orders in
+one document:
+
+| key | contents |
+| --- | --- |
+| `note`, `source` | conventions, provenance, licence |
+| `loops`, `counts` | 1…7, and the structure counts per loop order |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `label`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `comp` |
+| `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
+| `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
+
+Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique across
+loop orders and is the registry number the atlas displays. The L = 7 entries agree
+with `renorm_L7.json` expression for expression.
+
+```python
+import json, sympy
+d = json.load(open('phi4_atlas.json'))
+v71 = next(s for s in d['structures'] if s['num'] == 'V7.1')
+print(d['beta'][str(v71['id'])])            # f_3/960 - 197/2048 - pi**4/14400
+print(sympy.sympify(d['gamma_phi_On']['4583']))
+```
+
 ## Provenance and citation
 
 The graph ordering and the seven-loop input data come from Oliver Schnetz's Maple
@@ -37,6 +69,9 @@ version 0.8, and the seven-loop calculation it implements. The coefficients disp
 here are not copied from the package: they are recomputed structure by structure by
 tensorial minimal subtraction, in an independent Python implementation, and checked
 against the published O(n)-symmetric results.
+
+The structures and coefficients were extracted from HyperlogProcedures and recomputed
+with **Claude Fable 5.1**.
 
 If you use this atlas, please cite Schnetz's work alongside it:
 
@@ -55,11 +90,13 @@ The atlas is generated in the research repository, then copied here:
 
 ```
 python schnetz/extracted/graph_viewer.py 7   # -> schnetz/extracted_results/graph_atlas.html
-python build.py                              # -> index.html, with the credit line added
+python build.py                              # -> index.html + phi4_atlas.json
 ```
 
 [`build.py`](build.py) is the whole of the difference between the generated file and
-what is served: it adds one line to the header pointing at this repository. The page
+what is served: it adds a doctype and a UTF-8 charset, one header line giving the
+provenance, a download link, and it writes the JSON export out of the page's own
+inlined data. The page
 is otherwise self-contained — all data is inlined as JSON — and loads only
 [d3](https://d3js.org/) 7.9.0 from cdnjs (ISC licence) and two families from Google
 Fonts.

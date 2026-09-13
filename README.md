@@ -50,7 +50,7 @@ multiple of a product of periods (f₃², f₃f₅, f₅², f₃f₇, f₃³), a
 graphs out. Every primitive has a single-pole counterterm, and among the 1PI structures
 nothing else does. The one structure with a single pole that is not primitive is D2.3, the
 tree vertex with the sunset on one leg: it is not 1PI, and its only divergence is the
-primitive self-energy it carries (Z<sub>λ</sub> = 1/(6ε), β = 1/12 = γ<sub>φ</sub> of S2.1).
+primitive self-energy it carries (Z<sub>λ</sub> = 1/(24ε), β = 1/12 = γ<sub>φ</sub> of S2.1).
 
 Every structure shows its **symmetry factor** S = 1/|Aut|, on its list row and in the
 details pane. Automorphisms are counted with the external legs held fixed and parallel
@@ -61,12 +61,12 @@ on all 6117 structures.
 **|stab| and orbit** describe how a vertex structure's tensor behaves under permuting its
 external indices. |stab| is the number of permutations of i j k l that leave the tensor
 unchanged, which are exactly the leg permutations realised by an automorphism of the graph;
-orbit = 24/|stab| is the number of distinct tensors the permutations produce. β multiplies
-the sum of those orbit terms. Z<sub>λ</sub>
-multiplies the average over all 24 permutations, which is that sum divided by orbit; so
-Z<sub>λ</sub>/orbit is the coefficient of the same sum as β, and β<sub>L</sub> = L times its 1/ε residue.
-V1.1, λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 permutations, has |stab| = 8 and
-orbit = 3, and its Z<sub>λ</sub> = 3/ε is a residue of 1 per orbit term, giving β = 1.
+orbit = 24/|stab| is the number of distinct tensors the permutations produce. β and
+Z<sub>λ</sub> both multiply the sum of those orbit terms, so β<sub>L</sub> = L times the 1/ε
+residue of Z<sub>λ</sub>. V1.1, λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 permutations, has
+|stab| = 8, orbit = 3 and Z<sub>λ</sub> = 1/ε, giving β = 1. V6.11 and V6.36, two
+decompletions of the same product graph with orbits 6 and 4, both have
+Z<sub>λ</sub> = −40 f₃f₅/ε and β = −240 f₃f₅.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the

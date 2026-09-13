@@ -35,15 +35,16 @@ keeps are exactly the 4213 with non-vanishing β under minimal subtraction, plus
 the accidental zero at five loops, a structure with no cut vertex whose β happens to
 vanish. In particular the 439 leg-dressed structures that survive are precisely the
 dressed structures with β ≠ 0, and the 807 undressed structures with a cut vertex all
-have β = 0. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
+have β = 0.
 
 **Primitive only** keeps the primitive graphs: 1PI with no UV subdivergence, so the
 counterterm is a single 1/ε pole. There are 61 — 60 vertex structures (1, 0, 1, 1, 3, 10,
 44 at L = 1…7) and the sunset S2.1. For a propagator, a subgraph whose contraction leaves a
 scaleless graph does not count; that is what keeps the sunset, and every propagator
 structure from three loops on has a subdivergence that does count. The flag was checked
-against Schnetz's period table. Each of the 45 vertex graphs obtained by deleting a vertex
-of a completed primitive in `Periods` (L ≤ 7) is flagged, with β = 2(−1)<sup>L+1</sup>·S·P.
+against Schnetz's table of φ⁴ periods (the file `Periods` in HyperlogProcedures). Each of
+the 45 vertex graphs obtained by deleting a vertex of a completed primitive graph listed
+there (L ≤ 7) is flagged, with β = 2(−1)<sup>L+1</sup>·S·P.
 The other 15 are product graphs, whose completion has a three-vertex cut: β is the same
 multiple of a product of periods (f₃², f₃f₅, f₅², f₃f₇, f₃³), and the table leaves these
 graphs out. Every primitive has a single-pole counterterm, and among the 1PI structures
@@ -91,7 +92,7 @@ graph into view, and the TeX buttons stay visible since there is no hover.
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph
-ids (`#431`) and coefficient names (`b_{6,12}`, `f_7`). Individual structures are
+ids (`#431`) and coefficient names (`f_7`). Individual structures are
 addressable: `…/#L7-789`.
 
 Conventions are stated in the page header: d = 4 − ε, λ₀ = μ^ε(λ + Z-poles), the loop
@@ -108,8 +109,7 @@ served next to the page, so it can be fetched directly:
 curl -O https://andstergiou.github.io/phi4-graph-atlas/phi4_atlas.json
 ```
 
-It follows the shape of the project's `renorm_L*.json` files, with all loop orders in
-one document:
+It holds all loop orders in one document:
 
 | key | contents |
 | --- | --- |
@@ -126,8 +126,7 @@ what the "non-factorisable only" filter hides, so the same cut can be made on th
 `[s for s in d['structures'] if not s['fac']]`. Propagator structures
 also carry `sym`, true when the graph is symmetric under exchanging its two external legs. `vr` and `fac` differ exactly on the leg-dressed
 structures, as described above. Every structure carries `aut`, the |Aut| above (its
-symmetry factor is `1/aut`), and `prim`, the primitive flag. The L = 7 entries agree
-with `renorm_L7.json` expression for expression.
+symmetry factor is `1/aut`), and `prim`, the primitive flag.
 
 ```python
 import json, sympy
@@ -144,8 +143,7 @@ written in Schnetz's f-alphabet in Lyndon polynomial normal form; `beta_z` carri
 same numbers in the zeta notation instead. Powers of π appear directly in both.
 
 The f-words that occur through seven loops map to multiple zeta values exactly as
-follows (this is `F_TO_Z` in the project's `renorm.py`, solved from Schnetz's own
-period files, which carry both forms):
+follows (solved from Schnetz's period files, which carry both forms):
 
 | symbol | value | first appears |
 | --- | --- | --- |
@@ -200,13 +198,7 @@ numbers beside them are this project's own computation.
 
 ## How the page is built
 
-The atlas is generated in the research repository, then copied here:
-
-```
-python schnetz/extracted/graph_viewer.py 7   # -> schnetz/extracted_results/graph_atlas.html
-python build.py                              # -> index.html + phi4_atlas.json
-```
-
+The atlas page is generated from the results of the computation;
 [`build.py`](build.py) is the whole of the difference between the generated file and
 what is served: it adds a doctype and a UTF-8 charset, one header line giving the
 provenance, a download link, and it writes the JSON export out of the page's own

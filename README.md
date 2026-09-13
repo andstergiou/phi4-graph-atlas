@@ -1,7 +1,8 @@
 # φ⁴ Graph Atlas
 
 An interactive atlas of the tensor structures of the multiscalar φ⁴ beta function
-β<sub>ijkl</sub> and the anomalous dimension γ<sub>φ</sub>, through seven loops.
+β<sub>ijkl</sub> and the anomalous dimension γ<sub>φ</sub>, through seven loops, in
+minimal subtraction (MS-bar).
 
 **→ [andstergiou.github.io/phi4-graph-atlas](https://andstergiou.github.io/phi4-graph-atlas/)**
 
@@ -70,6 +71,44 @@ v71 = next(s for s in d['structures'] if s['num'] == 'V7.1')
 print(d['beta'][str(v71['id'])])            # f_3/960 - 197/2048 - pi**4/14400
 print(sympy.sympify(d['gamma_phi_On']['4583']))
 ```
+
+## Transcendentals: the f-alphabet
+
+Every value in the atlas is in **minimal subtraction (MS-bar)**. The coefficients are
+written in Schnetz's f-alphabet in Lyndon polynomial normal form; `beta_z` carries the
+same numbers in the zeta notation instead. Powers of π appear directly in both.
+
+The f-words that occur through seven loops map to multiple zeta values exactly as
+follows (this is `F_TO_Z` in the project's `renorm.py`, solved from Schnetz's own
+period files, which carry both forms):
+
+| symbol | value | first appears |
+| --- | --- | --- |
+| `f_3`, `f_5`, `f_7`, `f_9`, `f_11` | ζ(3), ζ(5), ζ(7), ζ(9), ζ(11) | 3, 4, 5, 6, 7 loops |
+| `f_3_5` | ζ(3)ζ(5) + ζ(5,3)/5 | 6 loops |
+| `f_3_7` | ζ(3)ζ(7) + (3/14)ζ(5)² + ζ(7,3)/14 | 7 loops |
+| `f_3_3_5` | ζ(3)²ζ(5)/2 + ζ(3)ζ(5,3)/5 − ζ(5,3,3)/5 + π⁶ζ(5)/1890 − π⁴ζ(7)/150 − (3/2)π²ζ(9) | 7 loops |
+
+In the zeta notation of `beta_z`: `z3`…`z11` are ζ(3)…ζ(11), and the irreducible
+multiple zeta values get their own symbols — `z3z5` = ζ(5,3), `z3z7` = ζ(7,3),
+`z533` = ζ(5,3,3). `P711` is Period[7,11], the seven-loop period that is not an MZV.
+
+Only Lyndon words appear as generators, so a word like `f_3_3` is never written: the
+shuffle algebra is the polynomial algebra on the Lyndon words, and the reductions are
+
+    f_3_3 = f_3²/2        f_3_3_3 = f_3³/6      f_5_5 = f_5²/2
+    f_5_3 = f_3 f_5 − f_3_5 = −ζ(5,3)/5         f_3_5_3 = f_3 f_3_5 − 2 f_3_3_5
+
+Squares therefore show up as ordinary monomials (`f_3**2`), not as words.
+
+Two more symbols appear at seven loops only. The level-6 letters `f6_2_3_3_3`,
+`f6_2_9`, `f6_4_7`, `f6_6_5` and `f6_8_3` occur solely in the combination that equals
+a rational multiple of Period[7,11]; `beta_z` collapses them to `P711`. And `sqrt(3)`
+and `I` occur in exactly one structure, V7.2855, in its β and Z_λ.
+
+The weights behave as they should: the heaviest f-word in β at L loops is weight
+2L − 3 — 3, 5, 7, 9, 11 at L = 3…7.
+
 
 ## Provenance and citation
 

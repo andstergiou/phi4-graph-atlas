@@ -36,6 +36,7 @@ header h1{font-family:var(--serif);font-weight:400;font-size:22px;margin:0;lette
 .dl{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);text-decoration:none;white-space:nowrap}
 .dl:hover{border-color:var(--accent);color:var(--accent-ink)}
 header h1 small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:10px;letter-spacing:.04em;text-transform:uppercase}
+header h1 small .sym{text-transform:none;font-family:var(--serif);font-size:13px;letter-spacing:0}
 .tabs{display:flex;gap:4px;margin-left:2rem}
 .tabs button{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
 .tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -97,9 +98,9 @@ dd.mono{font-family:var(--mono);font-size:12px;line-height:1.6}
 @media (prefers-reduced-motion: reduce){.toast{transition:none}}
 </style>
 <header>
-  <h1>φ⁴ Graph Atlas <small>tensor structures of β<sub>ijkl</sub> and γ<sub>φ</sub></small></h1>
+  <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β</span><sub>ijkl</sub> and <span class="sym">γ<sub>φ</sub></span></small></h1>
   <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so β̂ = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1).</div>
-  <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and every coefficient shown here were extracted and recomputed by tensorial minimal subtraction with Claude Fable 5.1. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (8.8 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
+  <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and every coefficient shown here were extracted and recomputed by tensorial minimal subtraction (MS-bar) with Claude Fable 5.1. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (8.8 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
   <div class="tabs" id="tabs" role="tablist"></div>
   <a class="dl" href="phi4_atlas.json" download>Download JSON</a>
   <input id="search" type="search" placeholder="Filter: V6.12, D5.3, S2.1, #431, b_{6,12}, f_7 …" aria-label="Filter structures">

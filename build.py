@@ -52,7 +52,8 @@ META = ('id', 'L', 'kind', 'num', 'label', 'seq', 'edges', 'ext', 'stab',
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
-    'anomalous dimension, per structure, at 1 to 7 loops.  beta is in the '
+    'anomalous dimension, per structure, at 1 to 7 loops.  Every value is in '
+    'minimal subtraction (MS-bar).  beta is in the '
     'O-normalisation (structure summed over its distinct external labellings); '
     'the counterterms are coefficients of Tbar (multiply by stab/24 for O).  '
     'Transcendentals: Schnetz f-alphabet in Lyndon polynomial normal form '
@@ -95,7 +96,8 @@ def export(data, out):
                 "seven-loop calculation: arXiv:2212.03663",
             'extraction':
                 'Structures and coefficients extracted from HyperlogProcedures and '
-                'recomputed by tensorial minimal subtraction with Claude Fable 5.1.',
+                'recomputed by tensorial minimal subtraction with Claude Fable 5.1.  '
+                'All values are in minimal subtraction (MS-bar).',
             'licence': 'CC BY 4.0',
         },
         'loops': sorted(by_loop),
@@ -119,8 +121,8 @@ def credit(n_structures, mb):
         '<div class="prov">Graph ordering and the seven-loop input data follow '
         "O. Schnetz's <a href=\"https://github.com/oliverschnetz/HyperlogProcedures\">"
         'HyperlogProcedures</a> 0.8; the structures and every coefficient shown here '
-        'were extracted and recomputed by tensorial minimal subtraction with Claude '
-        f'Fable 5.1. The full set of {n_structures} structures is available as '
+        'were extracted and recomputed by tensorial minimal subtraction (MS-bar) with '
+        f'Claude Fable 5.1. The full set of {n_structures} structures is available as '
         f'<a href="{JSON_NAME}" download>{JSON_NAME}</a> ({mb:.1f} MB). Provenance, '
         f'citation and licence (CC BY 4.0): <a href="{REPO}">'
         'github.com/andstergiou/phi4-graph-atlas</a>.</div>')

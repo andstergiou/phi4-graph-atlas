@@ -58,7 +58,7 @@ lines included, so S = 1/2 for V1.1 and 1/6 for S2.1. Letting the legs move mult
 |Aut| by exactly |stab|. Both counts were checked against an independent networkx count
 on all 6117 structures.
 
-**|stab| and orbit** describe how a vertex structure's tensor behaves under permuting its
+**|stab| and orbit** describe how a structure's tensor behaves under permuting its
 external indices. |stab| is the number of permutations of i j k l that leave the tensor
 unchanged, which are exactly the leg permutations realised by an automorphism of the graph;
 orbit = 24/|stab| is the number of distinct tensors the permutations produce. β and
@@ -67,6 +67,14 @@ residue of Z<sub>λ</sub>. V1.1, λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 permutat
 |stab| = 8, orbit = 3 and Z<sub>λ</sub> = 1/ε, giving β = 1. V6.11 and V6.36, two
 decompletions of the same product graph with orbits 6 and 4, both have
 Z<sub>λ</sub> = −40 f₃f₅/ε and β = −240 f₃f₅.
+
+Propagators follow the same rule: exchanging i and j either leaves the tensor unchanged
+(|stab| = 2, orbit = 1, a symmetric graph) or not (|stab| = 1, orbit = 2), and
+Z<sub>φ</sub><sup>−½</sup> − 1 and γ<sub>φ</sub> multiply the sum of the orbit terms, so an
+asymmetric graph's γ<sub>φ</sub> is the coefficient of G<sup>ij</sup> + G<sup>ji</sup>, and
+γ<sub>φ</sub> = −L times the 1/ε residue of Z<sub>φ</sub><sup>−½</sup>. With every coefficient
+normalised this way, each pure wave-function renormalisation — a tree-level vertex with
+one self-energy S on one leg — has β equal to γ<sub>φ</sub> of S, for all 439 of them.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the
@@ -117,7 +125,7 @@ It holds all loop orders in one document:
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
 | `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `aut`, `prim`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
-| `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
+| `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id (`gamma_phi_On`: both orientations at O(n)) |
 
 Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique across
 loop orders and is the registry number the atlas displays. Two reducibility flags travel with each

@@ -39,6 +39,14 @@ have β = 0. It is the same test as `is_1vr` in the project's `PredictSevenLoopE
 function or to the anomalous dimension; **all** puts them back. The page opens on the
 one-loop beta structure, V1.1.
 
+Every anomalous-dimension structure is marked **symmetric** or **asymmetric**, according to
+whether its graph is unchanged under exchanging the two external legs. Under **γ only** a
+second control appears — all · symmetric · asymmetric — opening on all each time γ only is
+chosen. Of the 305 propagator structures 117 are symmetric and 188 asymmetric; asymmetric
+ones first appear at five loops (5 of 12), and at seven loops they outnumber the symmetric
+160 to 70. The registry is unoriented, so an asymmetric graph appears once and stands for
+both orientations.
+
 Every expression in the details pane can be copied as LaTeX: hover it and a **TeX**
 button appears, putting the formula on the clipboard in standard syntax
 (`\frac`, `\varepsilon`, `\zeta_{5,3}`, `\lambda_{ikab}`, `f^{(6)}_{2,9}`), ready to
@@ -75,7 +83,7 @@ one document:
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
 | `loops`, `counts` | 1…7, and the structure counts per loop order |
-| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `comp` |
+| `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id |
 
@@ -83,7 +91,8 @@ Expressions are sympy-readable strings in `n` and `epsilon`; `id` is unique acro
 loop orders and is the registry number the atlas displays. Two reducibility flags travel with each
 structure: `vr` is the raw topology (the internal graph has a cut vertex), and `fac` is
 what the "non-factorisable only" filter hides, so the same cut can be made on the data:
-`[s for s in d['structures'] if not s['fac']]`. They differ exactly on the leg-dressed
+`[s for s in d['structures'] if not s['fac']]`. Propagator structures
+also carry `sym`, true when the graph is symmetric under exchanging its two external legs. They differ exactly on the leg-dressed
 structures, as described above. The L = 7 entries agree
 with `renorm_L7.json` expression for expression.
 

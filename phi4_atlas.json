@@ -1,5 +1,5 @@
 {
- "note": "Tensorial MS renormalisation of the multiscalar phi^4 beta function and anomalous dimension, per structure, at 1 to 7 loops.  Every value is in minimal subtraction (MS-bar).  beta is in the O-normalisation (structure summed over its distinct external labellings); the counterterms are coefficients of Tbar (multiply by stab/24 for O).  Transcendentals: Schnetz f-alphabet in Lyndon polynomial normal form (f_3 = zeta(3), f_5, ..., f_3_5 = zeta(3)zeta(5) + zeta(5,3)/5, then f_3_7, f_3_3_5, ...; f6_... level-6 letters), sqrt(3) and I as in the data; beta_z is beta in the zeta notation: z3z5 = zeta(5,3), z3z7 = zeta(7,3), z533 = zeta(5,3,3), P711 = Period[7,11].  Expressions are sympy-readable strings in n (the number of scalars) and epsilon.  Four-point structures carry beta, beta_z and Z_lambda; two-point structures carry Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the structure id, which is unique across all loop orders and matches the registry number shown in the atlas.  Two reducibility flags: vr is the raw topology -- the internal graph has a cut vertex -- while fac is what the atlas hides under \"non-factorisable only\": a structure whose tensor really splits into lower ones.  They differ on the leg-dressed structures, where a dressing always makes a cut vertex: fac keeps only a pure wave-function renormalisation -- a tree-level vertex with one irreducible self-energy on one leg -- and counts a vertex correction dressed on a leg, or dressings on more than one leg, as factorisable.  The pure wave-function renormalisations are exactly the dressed structures with non-vanishing beta.",
+ "note": "Tensorial MS renormalisation of the multiscalar phi^4 beta function and anomalous dimension, per structure, at 1 to 7 loops.  Every value is in minimal subtraction (MS-bar).  beta is in the O-normalisation (structure summed over its distinct external labellings); the counterterms are coefficients of Tbar (multiply by stab/24 for O).  Transcendentals: Schnetz f-alphabet in Lyndon polynomial normal form (f_3 = zeta(3), f_5, ..., f_3_5 = zeta(3)zeta(5) + zeta(5,3)/5, then f_3_7, f_3_3_5, ...; f6_... level-6 letters), sqrt(3) and I as in the data; beta_z is beta in the zeta notation: z3z5 = zeta(5,3), z3z7 = zeta(7,3), z533 = zeta(5,3,3), P711 = Period[7,11].  Expressions are sympy-readable strings in n (the number of scalars) and epsilon.  Four-point structures carry beta, beta_z and Z_lambda; two-point structures carry Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the structure id, which is unique across all loop orders and matches the registry number shown in the atlas.  Two reducibility flags: vr is the raw topology -- the internal graph has a cut vertex -- while fac is what the atlas hides under \"non-factorisable only\": a structure whose tensor really splits into lower ones.  They differ on the leg-dressed structures, where a dressing always makes a cut vertex: fac keeps only a pure wave-function renormalisation -- a tree-level vertex with one irreducible self-energy on one leg -- and counts a vertex correction dressed on a leg, or dressings on more than one leg, as factorisable.  The pure wave-function renormalisations are exactly the dressed structures with non-vanishing beta.  Propagator structures also carry sym: whether the graph is symmetric under exchanging its two external legs.  The registry is unoriented, so an asymmetric graph appears once and stands for both orientations.",
  "source": {
   "atlas": "https://andstergiou.github.io/phi4-graph-atlas/",
   "repository": "https://github.com/andstergiou/phi4-graph-atlas",
@@ -262,6 +262,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -988,6 +989,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -3368,6 +3370,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -3431,6 +3434,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -3494,6 +3498,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -3557,6 +3562,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -3620,6 +3626,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -15862,6 +15869,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -15933,6 +15941,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16004,6 +16013,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -16075,6 +16085,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -16146,6 +16157,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16217,6 +16229,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16288,6 +16301,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -16359,6 +16373,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -16430,6 +16445,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16501,6 +16517,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16572,6 +16589,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -16643,6 +16661,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -82648,6 +82667,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -82727,6 +82747,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -82806,6 +82827,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -82885,6 +82907,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -82964,6 +82987,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83043,6 +83067,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83122,6 +83147,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83201,6 +83227,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83280,6 +83307,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83359,6 +83387,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83438,6 +83467,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -83517,6 +83547,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83596,6 +83627,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83675,6 +83707,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -83754,6 +83787,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83833,6 +83867,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -83912,6 +83947,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -83991,6 +84027,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84070,6 +84107,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84149,6 +84187,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84228,6 +84267,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84307,6 +84347,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84386,6 +84427,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84465,6 +84507,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84544,6 +84587,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84623,6 +84667,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84702,6 +84747,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -84781,6 +84827,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84860,6 +84907,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -84939,6 +84987,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85018,6 +85067,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85097,6 +85147,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85176,6 +85227,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85255,6 +85307,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85334,6 +85387,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85413,6 +85467,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85492,6 +85547,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85571,6 +85627,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -85650,6 +85707,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85729,6 +85787,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85808,6 +85867,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85887,6 +85947,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -85966,6 +86027,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86045,6 +86107,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86124,6 +86187,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86203,6 +86267,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86282,6 +86347,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86361,6 +86427,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -86440,6 +86507,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86519,6 +86587,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -86598,6 +86667,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -86681,6 +86751,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -86764,6 +86835,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -86847,6 +86919,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -86930,6 +87003,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -87013,6 +87087,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513091,6 +513166,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513178,6 +513254,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -513265,6 +513342,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513352,6 +513430,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513439,6 +513518,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513526,6 +513606,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -513613,6 +513694,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513700,6 +513782,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513787,6 +513870,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -513874,6 +513958,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -513961,6 +514046,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514048,6 +514134,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514135,6 +514222,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514222,6 +514310,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514309,6 +514398,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -514396,6 +514486,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -514483,6 +514574,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -514570,6 +514662,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -514657,6 +514750,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514744,6 +514838,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -514831,6 +514926,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -514918,6 +515014,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515005,6 +515102,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515092,6 +515190,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515179,6 +515278,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515266,6 +515366,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515353,6 +515454,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515440,6 +515542,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515527,6 +515630,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515614,6 +515718,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515701,6 +515806,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515788,6 +515894,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -515875,6 +515982,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -515962,6 +516070,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516049,6 +516158,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -516136,6 +516246,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516223,6 +516334,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516310,6 +516422,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -516397,6 +516510,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516484,6 +516598,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516571,6 +516686,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516658,6 +516774,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -516745,6 +516862,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -516832,6 +516950,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -516919,6 +517038,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517006,6 +517126,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517093,6 +517214,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -517180,6 +517302,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517267,6 +517390,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517354,6 +517478,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -517441,6 +517566,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517528,6 +517654,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -517615,6 +517742,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517702,6 +517830,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517789,6 +517918,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -517876,6 +518006,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -517963,6 +518094,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518050,6 +518182,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518137,6 +518270,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518224,6 +518358,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518311,6 +518446,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -518398,6 +518534,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518485,6 +518622,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -518572,6 +518710,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518659,6 +518798,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -518746,6 +518886,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -518833,6 +518974,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -518920,6 +519062,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519007,6 +519150,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519094,6 +519238,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519181,6 +519326,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519268,6 +519414,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519355,6 +519502,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -519442,6 +519590,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -519529,6 +519678,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519616,6 +519766,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519703,6 +519854,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -519790,6 +519942,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519877,6 +520030,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -519964,6 +520118,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520051,6 +520206,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520138,6 +520294,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520225,6 +520382,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -520312,6 +520470,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520399,6 +520558,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520486,6 +520646,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520573,6 +520734,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520660,6 +520822,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520747,6 +520910,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520834,6 +520998,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -520921,6 +521086,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521008,6 +521174,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521095,6 +521262,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521182,6 +521350,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521269,6 +521438,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -521356,6 +521526,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521443,6 +521614,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521530,6 +521702,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -521617,6 +521790,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -521704,6 +521878,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -521791,6 +521966,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -521878,6 +522054,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -521965,6 +522142,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522052,6 +522230,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -522139,6 +522318,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -522226,6 +522406,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522313,6 +522494,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -522400,6 +522582,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -522487,6 +522670,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522574,6 +522758,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522661,6 +522846,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522748,6 +522934,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522835,6 +523022,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -522922,6 +523110,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523009,6 +523198,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523096,6 +523286,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523183,6 +523374,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -523270,6 +523462,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523357,6 +523550,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523444,6 +523638,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523531,6 +523726,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -523618,6 +523814,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -523705,6 +523902,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523792,6 +523990,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523879,6 +524078,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -523966,6 +524166,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524053,6 +524254,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524140,6 +524342,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -524227,6 +524430,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524314,6 +524518,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524401,6 +524606,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524488,6 +524694,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524575,6 +524782,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -524662,6 +524870,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -524749,6 +524958,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524836,6 +525046,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -524923,6 +525134,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525010,6 +525222,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -525097,6 +525310,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525184,6 +525398,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525271,6 +525486,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525358,6 +525574,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -525445,6 +525662,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525532,6 +525750,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525619,6 +525838,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525706,6 +525926,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525793,6 +526014,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525880,6 +526102,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -525967,6 +526190,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -526054,6 +526278,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -526141,6 +526366,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526228,6 +526454,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526315,6 +526542,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -526402,6 +526630,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526489,6 +526718,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526576,6 +526806,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526663,6 +526894,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526750,6 +526982,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526837,6 +527070,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -526924,6 +527158,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -527011,6 +527246,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527098,6 +527334,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527185,6 +527422,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -527272,6 +527510,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -527359,6 +527598,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527446,6 +527686,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527533,6 +527774,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527620,6 +527862,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527707,6 +527950,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527794,6 +528038,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -527881,6 +528126,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -527968,6 +528214,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -528055,6 +528302,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -528142,6 +528390,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528229,6 +528478,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528316,6 +528566,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528403,6 +528654,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -528490,6 +528742,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528577,6 +528830,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528664,6 +528918,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528751,6 +529006,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528838,6 +529094,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -528925,6 +529182,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529012,6 +529270,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529099,6 +529358,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529186,6 +529446,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529273,6 +529534,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529360,6 +529622,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529447,6 +529710,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529534,6 +529798,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -529621,6 +529886,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -529708,6 +529974,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529795,6 +530062,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529882,6 +530150,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -529969,6 +530238,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530056,6 +530326,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -530143,6 +530414,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530230,6 +530502,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -530317,6 +530590,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530404,6 +530678,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530491,6 +530766,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530578,6 +530854,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530665,6 +530942,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530752,6 +531030,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530839,6 +531118,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -530926,6 +531206,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -531013,6 +531294,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -531100,6 +531382,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": true,
    "comp": {
     "chain": [
      {
@@ -531187,6 +531470,7 @@
    "onepi": true,
    "vr": false,
    "fac": false,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531274,6 +531558,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531365,6 +531650,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531456,6 +531742,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531547,6 +531834,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531638,6 +531926,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531729,6 +532018,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531820,6 +532110,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -531911,6 +532202,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532002,6 +532294,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532093,6 +532386,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532184,6 +532478,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532279,6 +532574,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532370,6 +532666,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532461,6 +532758,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532552,6 +532850,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532643,6 +532942,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532734,6 +533034,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532825,6 +533126,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -532916,6 +533218,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -533007,6 +533310,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": false,
    "comp": {
     "chain": [
      {
@@ -533098,6 +533402,7 @@
    "onepi": false,
    "vr": true,
    "fac": true,
+   "sym": true,
    "comp": {
     "chain": [
      {

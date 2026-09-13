@@ -48,7 +48,7 @@ TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
 META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
-        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'fac', 'comp')
+        'orbit', 'On', 'tensor', 'graph', 'onepi', 'vr', 'fac', 'sym', 'comp')
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
@@ -74,7 +74,10 @@ NOTE = (
     'on one leg -- and counts a vertex correction dressed on a leg, or '
     'dressings on more than one leg, as factorisable.  The pure wave-function '
     'renormalisations are exactly the dressed structures with non-vanishing '
-    'beta.')
+    'beta.  Propagator structures also carry sym: whether the graph is '
+    'symmetric under exchanging its two external legs.  The registry is '
+    'unoriented, so an asymmetric graph appears once and stands for both '
+    'orientations.')
 
 
 def extract_data(html):

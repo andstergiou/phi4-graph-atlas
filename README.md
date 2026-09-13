@@ -23,16 +23,17 @@ graph and comes with
 
 **Non-factorisable only** hides the structures whose tensor really splits into lower
 ones: an undressed structure whose internal graph has a cut vertex, a propagator chain,
-and a leg-dressed structure whose core is factorisable or whose leg carries a chain of
-insertions. A β contribution from wave-function renormalisation is kept as long as the
-self-energy inserted, and the core it dresses, are themselves irreducible. That leaves
-5054 of the 6117 — 1, 3, 9, 31, 140, 706, 4164 at L = 1…7. Of the 1230 leg-dressed
-structures 1003 survive; the 227 dropped are 133 with a factorisable core and 94
-carrying a chain of insertions on one leg, and all 29 propagator chains go.
+and every leg-dressed structure except a pure wave-function renormalisation — a
+tree-level vertex with one irreducible self-energy on one leg. A vertex correction
+dressed on a leg, or self-energies on more than one leg, count as products and are
+hidden. That leaves 4490 of the 6117 — 1, 3, 8, 27, 122, 621, 3708 at L = 1…7.
 
-The 807 undressed structures with a cut vertex, which the filter also removes, all have
-vanishing β under minimal subtraction — the single structure with β = 0 that survives is
-V5.60, the accidental zero at five loops. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
+The cut is purely topological, but it lands on the physics: the vertex structures it
+keeps are exactly the 4213 with non-vanishing β under minimal subtraction, plus V5.60 —
+the accidental zero at five loops, a structure with no cut vertex whose β happens to
+vanish. In particular the 439 leg-dressed structures that survive are precisely the
+dressed structures with β ≠ 0, and the 807 undressed structures with a cut vertex all
+have β = 0. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
 
 **β only** and **γ only** restrict the list to the structures contributing to the beta
 function or to the anomalous dimension; **all** puts them back. The page opens on the

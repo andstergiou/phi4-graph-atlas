@@ -1,5 +1,5 @@
 {
- "note": "Tensorial MS renormalisation of the multiscalar phi^4 beta function and anomalous dimension, per structure, at 1 to 7 loops.  Every value is in minimal subtraction (MS-bar).  beta is in the O-normalisation (structure summed over its distinct external labellings); the counterterms are coefficients of Tbar (multiply by stab/24 for O).  Transcendentals: Schnetz f-alphabet in Lyndon polynomial normal form (f_3 = zeta(3), f_5, ..., f_3_5 = zeta(3)zeta(5) + zeta(5,3)/5, then f_3_7, f_3_3_5, ...; f6_... level-6 letters), sqrt(3) and I as in the data; beta_z is beta in the zeta notation: z3z5 = zeta(5,3), z3z7 = zeta(7,3), z533 = zeta(5,3,3), P711 = Period[7,11].  Expressions are sympy-readable strings in n (the number of scalars) and epsilon.  Four-point structures carry beta, beta_z and Z_lambda; two-point structures carry Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the structure id, which is unique across all loop orders and matches the registry number shown in the atlas.  Two reducibility flags: vr is the raw topology -- the internal graph has a cut vertex -- while fac is what the atlas hides under \"non-factorisable only\": a structure whose tensor really splits into lower ones.  They differ on the leg-dressed structures, where a dressing always makes a cut vertex but the beta contribution of a wave-function renormalisation still counts as irreducible so long as the self-energy inserted, and the core it dresses, are themselves irreducible; a chain of insertions on one leg, or a factorisable core, makes it factorisable.",
+ "note": "Tensorial MS renormalisation of the multiscalar phi^4 beta function and anomalous dimension, per structure, at 1 to 7 loops.  Every value is in minimal subtraction (MS-bar).  beta is in the O-normalisation (structure summed over its distinct external labellings); the counterterms are coefficients of Tbar (multiply by stab/24 for O).  Transcendentals: Schnetz f-alphabet in Lyndon polynomial normal form (f_3 = zeta(3), f_5, ..., f_3_5 = zeta(3)zeta(5) + zeta(5,3)/5, then f_3_7, f_3_3_5, ...; f6_... level-6 letters), sqrt(3) and I as in the data; beta_z is beta in the zeta notation: z3z5 = zeta(5,3), z3z7 = zeta(7,3), z533 = zeta(5,3,3), P711 = Period[7,11].  Expressions are sympy-readable strings in n (the number of scalars) and epsilon.  Four-point structures carry beta, beta_z and Z_lambda; two-point structures carry Zphi_minus_half, gamma_phi and gamma_phi_On.  The maps are keyed by the structure id, which is unique across all loop orders and matches the registry number shown in the atlas.  Two reducibility flags: vr is the raw topology -- the internal graph has a cut vertex -- while fac is what the atlas hides under \"non-factorisable only\": a structure whose tensor really splits into lower ones.  They differ on the leg-dressed structures, where a dressing always makes a cut vertex: fac keeps only a pure wave-function renormalisation -- a tree-level vertex with one irreducible self-energy on one leg -- and counts a vertex correction dressed on a leg, or dressings on more than one leg, as factorisable.  The pure wave-function renormalisations are exactly the dressed structures with non-vanishing beta.",
  "source": {
   "atlas": "https://andstergiou.github.io/phi4-graph-atlas/",
   "repository": "https://github.com/andstergiou/phi4-graph-atlas",
@@ -1058,7 +1058,7 @@
    "graph": "4 vertices; edges 1-2x2, 2-3, 3-4x3; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -3702,7 +3702,7 @@
    "graph": "5 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-5x3; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -3878,7 +3878,7 @@
    "graph": "5 vertices; edges 1-2x2, 2-4, 3-4x2, 3-5x2, 4-5; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -3966,7 +3966,7 @@
    "graph": "5 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-5x3; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -4493,7 +4493,7 @@
    "graph": "5 vertices; edges 1-2, 1-4, 2-3x3, 4-5x3; legs 1:2, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -16733,7 +16733,7 @@
    "graph": "6 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-5, 5-6x3; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -16925,7 +16925,7 @@
    "graph": "6 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-5, 5-6x3; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -17117,7 +17117,7 @@
    "graph": "6 vertices; edges 1-2, 1-3, 2-3x2, 3-5, 4-5x2, 4-6x2, 5-6; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -17309,7 +17309,7 @@
    "graph": "6 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-5, 5-6x3; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -17405,7 +17405,7 @@
    "graph": "6 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-5, 5-6x3; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -17501,7 +17501,7 @@
    "graph": "6 vertices; edges 1-2x2, 2-6, 3-4x3, 3-5, 4-6, 5-6x2; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -17597,7 +17597,7 @@
    "graph": "6 vertices; edges 1-2x2, 2-5, 3-4x2, 3-5x2, 4-6x2, 5-6; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -17693,7 +17693,7 @@
    "graph": "6 vertices; edges 1-2x2, 2-5, 3-4x2, 3-5, 3-6, 4-5, 4-6, 5-6; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -17789,7 +17789,7 @@
    "graph": "6 vertices; edges 1-2x2, 2-3, 3-5, 3-6x2, 4-5x2, 4-6, 5-6; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -17985,7 +17985,7 @@
    "graph": "6 vertices; edges 1-2x2, 2-3, 2-5, 3-4x3, 5-6x3; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -18086,7 +18086,7 @@
    "graph": "6 vertices; edges 1-2, 1-4, 2-3, 2-5, 3-4x3, 5-6x3; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -18182,7 +18182,7 @@
    "graph": "6 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-5, 5-6x3; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -18374,7 +18374,7 @@
    "graph": "6 vertices; edges 1-2x2, 1-3, 2-3, 3-5, 4-5x2, 4-6x2, 5-6; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -18470,7 +18470,7 @@
    "graph": "6 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-5, 5-6x3; legs 1:1, 2:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -18566,7 +18566,7 @@
    "graph": "6 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-5, 5-6x3; legs 2:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -18662,7 +18662,7 @@
    "graph": "6 vertices; edges 1-2, 1-4x2, 2-3x3, 4-5, 5-6x3; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -18763,7 +18763,7 @@
    "graph": "6 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-5, 5-6x3; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -20482,7 +20482,7 @@
    "graph": "6 vertices; edges 1-2, 1-5, 2-3x3, 4-5x2, 4-6x2, 5-6; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -87115,7 +87115,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4, 3-5, 4-5x2, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -87323,7 +87323,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3x2, 3-4, 3-5, 4-5x2, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -87531,7 +87531,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4x2, 4-5x2, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -87739,7 +87739,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 2-3x2, 3-4x2, 4-5x2, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -87947,7 +87947,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -88155,7 +88155,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -88363,7 +88363,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3, 2-5, 3-4x2, 3-5, 4-5, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -88571,7 +88571,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 2-3, 2-4, 3-4x2, 3-5, 4-5, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -88779,7 +88779,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 3-7, 4-5x3, 4-6, 5-7, 6-7x2; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -88987,7 +88987,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 3-6, 4-5x2, 4-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -89195,7 +89195,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 3-6, 4-5x2, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -89403,7 +89403,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-6, 4-7x2, 5-6x2, 5-7, 6-7; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -89827,7 +89827,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 2-3x2, 3-4, 3-6, 4-5x3, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90040,7 +90040,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4, 3-6, 4-5x3, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90248,7 +90248,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3x2, 2-5, 3-4, 4-5x2, 5-6, 6-7x3; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90352,7 +90352,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 2-5, 3-4, 4-5x2, 5-6, 6-7x3; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90456,7 +90456,7 @@
    "graph": "7 vertices; edges 1-3, 1-4, 2-3x2, 2-5, 3-4, 4-5x2, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90560,7 +90560,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 2-3x2, 2-4, 3-4, 4-5x2, 5-6, 6-7x3; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -90768,7 +90768,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -90872,7 +90872,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -90976,7 +90976,7 @@
    "graph": "7 vertices; edges 1-3, 1-5, 2-4x2, 2-5, 3-4x2, 3-5, 5-6, 6-7x3; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91080,7 +91080,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-4x2, 2-5, 3-4x2, 3-5, 5-6, 6-7x3; legs 1:2, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91184,7 +91184,7 @@
    "graph": "7 vertices; edges 1-4, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-6, 6-7x3; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91288,7 +91288,7 @@
    "graph": "7 vertices; edges 1-3, 1-4, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-6, 6-7x3; legs 1:2, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91392,7 +91392,7 @@
    "graph": "7 vertices; edges 1-3, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-6, 6-7x3; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91496,7 +91496,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 2-3, 2-5x2, 3-4x3, 5-6, 6-7x3; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -91709,7 +91709,7 @@
    "graph": "7 vertices; edges 1-2, 1-7, 2-3, 2-5x2, 3-4x3, 5-6, 6-7x3; legs 1:2, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91813,7 +91813,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-5, 3-4, 3-5, 4-5, 5-6, 6-7x3; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -91917,7 +91917,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-7, 3-6x2, 3-7x2, 4-5x3, 4-6, 5-7; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92021,7 +92021,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-6, 3-4x2, 3-5x2, 4-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92125,7 +92125,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-7, 3-6x2, 3-7, 4-5x3, 4-7, 5-6, 6-7; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92229,7 +92229,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 3-6x2, 3-7, 4-5x3, 4-7, 5-6, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92333,7 +92333,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-7, 3-4, 3-5x2, 4-6x2, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92437,7 +92437,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 3-4, 3-5x2, 4-6x2, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92541,7 +92541,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-6, 3-4x2, 3-5x2, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92645,7 +92645,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-4, 3-6x2, 3-7x2, 4-5x2, 4-6, 5-7, 6-7; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92749,7 +92749,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-7, 3-6x2, 3-7, 4-5x2, 4-6, 4-7, 5-6, 5-7; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92853,7 +92853,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 3-6x2, 3-7, 4-5x2, 4-6, 4-7, 5-6, 5-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -92957,7 +92957,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-5, 3-5x2, 3-7x2, 4-6x2, 4-7, 5-6, 6-7; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93061,7 +93061,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-4, 3-5x2, 3-7x2, 4-6x2, 4-7, 5-6, 6-7; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93165,7 +93165,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 3-5x2, 3-7, 4-6x2, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93269,7 +93269,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-6, 3-4x2, 3-5, 3-7, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93373,7 +93373,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 3-5, 3-6, 3-7, 4-5, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93693,7 +93693,7 @@
    "graph": "7 vertices; edges 1-2x2, 2-3, 2-6, 3-4x3, 5-6x2, 5-7x2, 6-7; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -93802,7 +93802,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3, 2-6, 3-4x3, 5-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -93906,7 +93906,7 @@
    "graph": "7 vertices; edges 1-2, 1-7, 2-3, 2-6, 3-4x3, 5-6x2, 5-7x2, 6-7; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -94010,7 +94010,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-4, 2-3, 3-4, 3-5, 4-5x2, 5-6, 6-7x3; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -94218,7 +94218,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-5, 2-3, 3-4x2, 4-5x2, 5-6, 6-7x3; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -94426,7 +94426,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -94634,7 +94634,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-5, 2-4, 3-4x2, 3-5, 4-5, 5-6, 6-7x3; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -94738,7 +94738,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-4, 3-4x2, 3-5, 4-5, 5-6, 6-7x3; legs 1:1, 2:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -94842,7 +94842,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-3, 3-7, 4-5x3, 4-6, 5-7, 6-7x2; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -94946,7 +94946,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-3, 3-6, 4-5x2, 4-6x2, 5-7x2, 6-7; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -95050,7 +95050,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-3, 3-6, 4-5x2, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -95154,7 +95154,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-6, 4-7x2, 5-6x2, 5-7, 6-7; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -95366,7 +95366,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-7, 3-4, 3-6, 4-5x3, 6-7x3; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -95470,7 +95470,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 3-6, 4-5x3, 6-7x3; legs 1:1, 2:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -95579,7 +95579,7 @@
    "graph": "7 vertices; edges 1-3x2, 1-5, 2-3x2, 2-4, 4-5x2, 5-6, 6-7x3; legs 1:1, 2:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -95787,7 +95787,7 @@
    "graph": "7 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:1, 2:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -95891,7 +95891,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 1-5, 2-3, 3-4, 4-5x2, 5-6, 6-7x3; legs 2:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -95995,7 +95995,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-5, 4-5x2, 5-6, 6-7x3; legs 2:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96203,7 +96203,7 @@
    "graph": "7 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-6, 5-6x2, 5-7x2, 6-7; legs 2:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -96307,7 +96307,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-7x2, 5-6x2, 5-7, 6-7; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96411,7 +96411,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96515,7 +96515,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-6x2, 4-7, 5-6, 5-7, 6-7; legs 1:1, 3:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96619,7 +96619,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 1-7, 2-3x3, 4-6x2, 4-7, 5-6, 5-7, 6-7; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96723,7 +96723,7 @@
    "graph": "7 vertices; edges 1-2, 1-5, 1-7, 2-3x3, 4-5, 4-7x2, 5-6x2, 6-7; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96827,7 +96827,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5, 4-7x2, 5-6x2, 6-7; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -96931,7 +96931,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-6x2, 5-7x2, 6-7x2; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97035,7 +97035,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5x3, 4-7, 5-6, 6-7; legs 1:1, 3:1, 6:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97139,7 +97139,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-5, 4-6, 5-6x2, 5-7, 6-7; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97243,7 +97243,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5x2, 4-6x2, 5-7, 6-7; legs 1:1, 3:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97347,7 +97347,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-5x2, 5-6, 6-7x3; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -97565,7 +97565,7 @@
    "graph": "7 vertices; edges 1-2, 1-4x2, 2-3x3, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -97674,7 +97674,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-5, 3-4, 4-5x2, 5-6, 6-7x3; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97778,7 +97778,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-6, 5-6x2, 5-7x2, 6-7; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -97882,7 +97882,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 1-5, 2-4, 2-5, 3-4x2, 3-5, 5-6, 6-7x3; legs 1:1, 2:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -97986,7 +97986,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 1-5, 2-3, 2-5, 3-4x2, 4-5, 5-6, 6-7x3; legs 1:1, 2:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -98090,7 +98090,7 @@
    "graph": "7 vertices; edges 1-2, 1-3, 1-4, 2-4, 2-5, 3-4, 3-5, 4-5, 5-6, 6-7x3; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -106375,7 +106375,7 @@
    "graph": "7 vertices; edges 1-2, 1-7, 2-3x3, 4-5x3, 4-6, 5-7, 6-7x2; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -106483,7 +106483,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 2-3x3, 4-5x2, 4-6x2, 5-7x2, 6-7; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -106591,7 +106591,7 @@
    "graph": "7 vertices; edges 1-2, 1-6, 2-3x3, 4-5x2, 4-6, 4-7, 5-6, 5-7, 6-7; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -106699,7 +106699,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 2-3x3, 4-6, 4-7x2, 5-6x2, 5-7, 6-7; legs 1:2, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -106919,7 +106919,7 @@
    "graph": "7 vertices; edges 1-3, 1-6, 2-3x2, 2-4x2, 3-4, 5-6x2, 5-7x2, 6-7; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -107027,7 +107027,7 @@
    "graph": "7 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-5x3, 6-7x3; legs 1:1, 3:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -533208,7 +533208,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4, 3-5, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -533432,7 +533432,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4, 3-5, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -533656,7 +533656,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4x2, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -533880,7 +533880,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 3-4x2, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -534104,7 +534104,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4, 3-6, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -534328,7 +534328,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4, 3-6, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -534552,7 +534552,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-6, 3-4x2, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -534776,7 +534776,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 3-4x2, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -535000,7 +535000,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4, 3-5, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -535224,7 +535224,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4, 3-5, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -535448,7 +535448,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4x2, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -535672,7 +535672,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 3-4x2, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -535896,7 +535896,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4, 3-6, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -536120,7 +536120,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 3-4, 3-6, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -536344,7 +536344,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-6, 3-4, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -536568,7 +536568,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 3-4, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -536792,7 +536792,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -537016,7 +537016,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -537240,7 +537240,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -537464,7 +537464,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -537688,7 +537688,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -537912,7 +537912,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -538136,7 +538136,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4x2, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -538360,7 +538360,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4x2, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -539048,7 +539048,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-6, 3-4x2, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -539272,7 +539272,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 3-4x2, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -539501,7 +539501,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 3-4, 3-6, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -539725,7 +539725,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 3-4, 3-6, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -539949,7 +539949,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-5, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -540173,7 +540173,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-4, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -540397,7 +540397,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-4, 2-5, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -540621,7 +540621,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-6, 3-4x2, 3-5, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -540845,7 +540845,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-4, 3-4x2, 3-5, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -541069,7 +541069,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-5, 3-4x2, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -541293,7 +541293,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-4, 3-4x2, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -541517,7 +541517,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-4, 2-6, 3-5x2, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -541741,7 +541741,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-4, 3-5x2, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -541965,7 +541965,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-5, 2-6, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -542189,7 +542189,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-4, 2-5, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -542413,7 +542413,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-4, 2-6, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -542637,7 +542637,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-6, 3-4, 3-6x2, 4-5x3, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -542866,7 +542866,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-5, 3-4, 3-6x2, 4-5x3, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -543090,7 +543090,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-8, 3-4, 3-6x2, 4-5x3, 6-7, 7-8x3; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -543314,7 +543314,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-4, 3-4, 3-5, 3-6, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -543538,7 +543538,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-8, 4-7x2, 4-8x2, 5-6x3, 5-7, 6-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -543762,7 +543762,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-7, 4-5x2, 4-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -543986,7 +543986,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-8, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -544210,7 +544210,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -544434,7 +544434,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-8, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -544658,7 +544658,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -544882,7 +544882,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-7, 4-5x2, 4-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -545106,7 +545106,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-5, 4-7x2, 4-8x2, 5-6x2, 5-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -545330,7 +545330,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-8, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -545554,7 +545554,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -545778,7 +545778,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-6, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -546002,7 +546002,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-5, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -546226,7 +546226,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-6x2, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -546450,7 +546450,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-7, 4-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -546674,7 +546674,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 3-4, 4-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -547362,7 +547362,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -547591,7 +547591,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3x2, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -547703,7 +547703,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-5, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -547927,7 +547927,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-8, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548151,7 +548151,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-5, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548263,7 +548263,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-5, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548375,7 +548375,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-5, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548487,7 +548487,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 2-4, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548711,7 +548711,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-6, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548823,7 +548823,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-6, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -548935,7 +548935,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-6, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -549047,7 +549047,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 2-4, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -549271,7 +549271,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-5, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -549383,7 +549383,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-5, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -549495,7 +549495,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-5, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -549607,7 +549607,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x2, 2-4, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -549831,7 +549831,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-6, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -549943,7 +549943,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-6, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -550055,7 +550055,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-6, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -550167,7 +550167,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 2-4, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -550279,7 +550279,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -550391,7 +550391,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -550503,7 +550503,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -550615,7 +550615,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -550727,7 +550727,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -550839,7 +550839,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -550951,7 +550951,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -551063,7 +551063,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-4, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -551175,7 +551175,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -551519,7 +551519,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x2, 2-4, 3-8, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -551631,7 +551631,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-8, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -551743,7 +551743,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-4, 3-8, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -551855,7 +551855,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x2, 2-4, 3-4, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -551967,7 +551967,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3x2, 2-4, 3-4, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:2, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -552084,7 +552084,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-4x2, 2-6, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -552196,7 +552196,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-4x2, 2-6, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -552308,7 +552308,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-4x2, 2-6, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -552420,7 +552420,7 @@
    "graph": "8 vertices; edges 1-3, 1-6, 2-4x2, 2-5, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -552644,7 +552644,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-4x2, 2-5, 3-4x2, 3-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -552756,7 +552756,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-4x2, 2-5, 3-4x2, 3-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -552868,7 +552868,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 2-3x2, 2-4, 2-6, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -552980,7 +552980,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-4, 2-6, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553092,7 +553092,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-3x2, 2-4, 2-6, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553204,7 +553204,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553316,7 +553316,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-4, 2-5, 3-4, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553428,7 +553428,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553540,7 +553540,7 @@
    "graph": "8 vertices; edges 1-4, 1-6, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553764,7 +553764,7 @@
    "graph": "8 vertices; edges 1-3, 1-6, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -553876,7 +553876,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -553988,7 +553988,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -554100,7 +554100,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-3x2, 2-4, 2-5, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -554212,7 +554212,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-5, 2-7, 3-4x3, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554324,7 +554324,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-5, 2-7, 3-4x3, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554436,7 +554436,7 @@
    "graph": "8 vertices; edges 1-5, 1-6, 2-3, 2-5, 2-7, 3-4x3, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554548,7 +554548,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-7, 2-8, 3-4x3, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554660,7 +554660,7 @@
    "graph": "8 vertices; edges 1-5, 1-6, 2-3, 2-7, 2-8, 3-4x3, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554772,7 +554772,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-5, 2-6, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554884,7 +554884,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-5, 2-6, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -554996,7 +554996,7 @@
    "graph": "8 vertices; edges 1-6, 1-8, 2-3, 2-5, 2-6, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555108,7 +555108,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-6, 2-8, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555220,7 +555220,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-6, 2-8, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555332,7 +555332,7 @@
    "graph": "8 vertices; edges 1-5, 1-6, 2-3, 2-6, 2-8, 3-4x3, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555444,7 +555444,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-6, 2-8, 3-4x3, 5-6, 5-8x2, 6-7x2, 7-8; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555556,7 +555556,7 @@
    "graph": "8 vertices; edges 1-5, 1-7, 2-3, 2-6, 2-8, 3-4x3, 5-6, 5-8x2, 6-7x2, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555668,7 +555668,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-7, 2-8, 3-4x3, 5-6, 5-8x2, 6-7x2, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555780,7 +555780,7 @@
    "graph": "8 vertices; edges 1-5, 1-6, 2-3, 2-7, 2-8, 3-4x3, 5-6, 5-8x2, 6-7x2, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -555892,7 +555892,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-5, 2-6, 3-4x3, 5-7x2, 6-8x2, 7-8x2; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556004,7 +556004,7 @@
    "graph": "8 vertices; edges 1-5, 1-6, 2-3, 2-5, 2-6, 3-4x3, 5-7x2, 6-8x2, 7-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556116,7 +556116,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 2-3, 2-7, 2-8, 3-4x3, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556228,7 +556228,7 @@
    "graph": "8 vertices; edges 1-7, 1-8, 2-3, 2-7, 2-8, 3-4x3, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556340,7 +556340,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-5, 2-8, 3-4x3, 5-6, 5-7, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556452,7 +556452,7 @@
    "graph": "8 vertices; edges 1-5, 1-8, 2-3, 2-5, 2-8, 3-4x3, 5-6, 5-7, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556564,7 +556564,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-7, 2-8, 3-4x3, 5-6x2, 5-7x2, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556676,7 +556676,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-7, 2-8, 3-4x3, 5-6x2, 5-7x2, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556788,7 +556788,7 @@
    "graph": "8 vertices; edges 1-6, 1-8, 2-3, 2-7, 2-8, 3-4x3, 5-6x2, 5-7x2, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -556900,7 +556900,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-5, 2-6, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -557129,7 +557129,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-5, 2-6, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -557241,7 +557241,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 2-3, 2-5, 2-6, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -557353,7 +557353,7 @@
    "graph": "8 vertices; edges 1-5, 1-8, 2-3, 2-5, 2-6, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -557465,7 +557465,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-5x2, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -557694,7 +557694,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-5x2, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -557806,7 +557806,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-5x2, 3-4x3, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -558035,7 +558035,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-5x2, 3-4x3, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -558147,7 +558147,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 2-3, 2-5x2, 3-4x3, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -558371,7 +558371,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-5, 3-4, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -558483,7 +558483,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-4, 2-5, 3-4, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -558595,7 +558595,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-5, 3-4, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -558707,7 +558707,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-6, 3-5, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -558819,7 +558819,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-4, 2-6, 3-5, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -558931,7 +558931,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-3, 2-4, 2-6, 3-5, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -559043,7 +559043,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-6, 3-4, 3-6, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -559155,7 +559155,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3, 2-4, 2-6, 3-4, 3-6, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -559267,7 +559267,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 2-3, 2-4, 2-5, 3-5, 3-6, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -559379,7 +559379,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 2-3, 2-4, 2-5, 3-5, 3-6, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -559491,7 +559491,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4x2, 3-7, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -559603,7 +559603,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x3, 3-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -559715,7 +559715,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-5x2, 3-7, 4-6x2, 4-7, 4-8, 5-6, 5-8, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -559827,7 +559827,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-5x2, 3-7, 4-6x2, 4-7, 4-8, 5-6, 5-8, 6-8, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -559939,7 +559939,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x2, 3-7, 3-8, 4-5, 4-7, 5-6, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560051,7 +560051,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-7, 3-8, 4-5, 4-7, 5-6, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560163,7 +560163,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4, 3-5, 3-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560275,7 +560275,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-5, 3-7, 3-8, 4-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560387,7 +560387,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-6x2, 3-7, 4-5x2, 4-8, 5-6, 5-8, 6-7, 7-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560499,7 +560499,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-5x2, 3-7, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560611,7 +560611,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-7, 3-8, 4-5, 4-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560723,7 +560723,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-7, 3-8, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560835,7 +560835,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -560947,7 +560947,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4x2, 3-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561059,7 +561059,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x2, 3-5, 3-7, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561171,7 +561171,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x3, 3-7, 4-8, 5-7x2, 5-8, 6-7, 6-8x2; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561283,7 +561283,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-6x2, 3-8, 4-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561395,7 +561395,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-6x2, 3-8, 4-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561507,7 +561507,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-6x2, 3-8, 4-7x2, 4-8, 5-6, 5-7, 5-8x2, 6-7; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561619,7 +561619,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-5x2, 3-7, 4-7x2, 4-8, 5-6, 5-8, 6-7, 6-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561731,7 +561731,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-5x2, 3-7, 4-7x2, 4-8, 5-6, 5-8, 6-7, 6-8x2; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561843,7 +561843,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4, 3-5x2, 4-8x2, 5-6, 5-7, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -561955,7 +561955,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4x2, 3-7, 4-8, 5-6, 5-7x2, 5-8, 6-7, 6-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562067,7 +562067,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4x2, 3-8, 4-7, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562179,7 +562179,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4x2, 3-8, 4-7, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562291,7 +562291,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-5x2, 3-7, 4-6x2, 4-8, 5-6, 5-8, 6-7, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562403,7 +562403,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-5x2, 3-7, 4-6x2, 4-8, 5-6, 5-8, 6-7, 7-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562515,7 +562515,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4, 3-5x2, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562627,7 +562627,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4, 3-5x2, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562739,7 +562739,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-5, 3-6x2, 4-5x2, 4-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562851,7 +562851,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4, 3-8x2, 4-6x3, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -562963,7 +562963,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4, 3-8x2, 4-6x3, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563075,7 +563075,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x2, 3-5x2, 4-7x2, 5-8, 6-7, 6-8x2, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563187,7 +563187,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-5x2, 4-7x2, 5-8, 6-7, 6-8x2, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563299,7 +563299,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-4x2, 3-6x2, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563411,7 +563411,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-4x2, 3-6x2, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563523,7 +563523,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4x2, 3-8, 4-6, 4-8, 5-6x2, 5-7, 5-8, 6-7, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563635,7 +563635,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4x2, 3-8, 4-6, 4-8, 5-6x2, 5-7, 5-8, 6-7, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563747,7 +563747,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-6x2, 3-7, 4-5x2, 4-8, 5-6, 5-8, 6-7, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563859,7 +563859,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-5x2, 3-7, 4-6x2, 4-7, 5-6, 5-8, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -563971,7 +563971,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4x2, 3-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564083,7 +564083,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x2, 3-6x2, 4-5, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564195,7 +564195,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-4x2, 3-6x2, 4-5, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564307,7 +564307,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4x2, 3-5x2, 4-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564419,7 +564419,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-5x2, 3-7, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564531,7 +564531,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-5x2, 3-6x2, 4-7x2, 4-8, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564643,7 +564643,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-5x2, 3-6x2, 4-7x2, 4-8, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564755,7 +564755,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-4, 3-7x2, 4-8x2, 5-6x3, 5-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564867,7 +564867,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x3, 3-7, 4-8, 5-6x2, 5-8, 6-7, 7-8x2; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -564979,7 +564979,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-4x2, 3-7x2, 4-8x2, 5-6x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565091,7 +565091,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-5, 3-5x2, 3-6x2, 4-7x2, 4-8x2, 5-7, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565203,7 +565203,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-5x2, 3-7x2, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565315,7 +565315,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-5x2, 3-7x2, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565427,7 +565427,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x2, 3-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565539,7 +565539,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-4x2, 3-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565651,7 +565651,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x3, 3-7, 4-5, 5-6x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565763,7 +565763,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-4x3, 3-7, 4-5, 5-6x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565875,7 +565875,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-7, 3-6x2, 3-8, 4-5x3, 4-8, 5-7, 6-7, 6-8, 7-8; legs 1:2, 2:1, 3:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -565987,7 +565987,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 3-6x2, 3-8, 4-5x3, 4-8, 5-7, 6-7, 6-8, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566099,7 +566099,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x2, 3-7x2, 4-8x2, 5-6x3, 5-7, 6-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566211,7 +566211,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x3, 3-7, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566323,7 +566323,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x3, 3-7, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566435,7 +566435,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4, 3-5x3, 4-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566547,7 +566547,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-6x2, 3-8x2, 4-5x2, 4-6x2, 5-7x2, 7-8; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566659,7 +566659,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-4x2, 3-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566771,7 +566771,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-4x2, 3-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566883,7 +566883,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-6, 3-5x2, 3-7x2, 4-6x2, 4-8x2, 5-8, 6-7, 7-8; legs 1:2, 2:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -566995,7 +566995,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-8, 3-5x2, 3-6x2, 4-5, 4-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -567107,7 +567107,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 3-5x2, 3-6x2, 4-5, 4-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -568383,7 +568383,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 2-8, 3-4x3, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -568500,7 +568500,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-8, 3-4x3, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 2:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -568612,7 +568612,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 2-3, 2-8, 3-4x3, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -568724,7 +568724,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 2-7, 3-4x3, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -568841,7 +568841,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-7, 3-4x3, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -568953,7 +568953,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-7, 3-4x3, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -569065,7 +569065,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 2-7, 3-4x3, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -569182,7 +569182,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-7, 3-4x3, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -569294,7 +569294,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-7, 3-4x3, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -569406,7 +569406,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-3, 2-5, 3-4x3, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -569523,7 +569523,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-5, 3-4x3, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -569635,7 +569635,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3, 2-5, 3-4x3, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -569984,7 +569984,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3, 2-5, 3-4x3, 5-6x3, 6-7, 7-8x3; legs 1:2, 2:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -570096,7 +570096,7 @@
    "graph": "8 vertices; edges 1-2x2, 2-4, 2-7, 3-4x2, 3-5x2, 4-5, 6-7x2, 6-8x2, 7-8; legs 1:2, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -570213,7 +570213,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-4, 2-7, 3-4x2, 3-5x2, 4-5, 6-7x2, 6-8x2, 7-8; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -570325,7 +570325,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3, 2-5, 2-7, 3-4x3, 5-6x3, 7-8x3; legs 1:2, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -570442,7 +570442,7 @@
    "graph": "8 vertices; edges 1-4, 1-6, 2-3, 2-5, 2-7, 3-4x3, 5-6x3, 7-8x3; legs 1:2, 2:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -570554,7 +570554,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4, 3-5, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -570778,7 +570778,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-3, 3-4x2, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -571002,7 +571002,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4, 3-6, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -571226,7 +571226,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-3, 3-4x2, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -571450,7 +571450,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4, 3-5, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -571674,7 +571674,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-3, 3-4x2, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -571898,7 +571898,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-3, 3-4, 3-6, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -572122,7 +572122,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-3, 3-4, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -572346,7 +572346,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -572570,7 +572570,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -572794,7 +572794,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -573018,7 +573018,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4x2, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -573474,7 +573474,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-8, 3-4x2, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -573703,7 +573703,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-4, 3-6, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -573927,7 +573927,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-4, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574039,7 +574039,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-4, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574151,7 +574151,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-5, 3-4x2, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574263,7 +574263,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-4, 3-4x2, 3-5, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574487,7 +574487,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-4, 3-4x2, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -574599,7 +574599,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-4, 3-4x2, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -574711,7 +574711,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-3, 3-5x2, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574823,7 +574823,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-3, 3-5x2, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -574935,7 +574935,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-4, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -575047,7 +575047,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-4, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -575159,7 +575159,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-6, 3-4x2, 3-5, 3-6, 4-5, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -575383,7 +575383,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-5, 3-4, 3-6x2, 4-5x3, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -575495,7 +575495,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-6, 3-4, 3-6x2, 4-5x3, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -575612,7 +575612,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-4, 2-5, 3-4, 3-5, 3-6, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -575724,7 +575724,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-8, 4-7x2, 4-8x2, 5-6x3, 5-7, 6-8; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -575836,7 +575836,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-7, 4-5x2, 4-6x2, 5-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -575948,7 +575948,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-8, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:1, 2:1, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576060,7 +576060,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576172,7 +576172,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-8, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576284,7 +576284,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576396,7 +576396,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-7, 4-5x2, 4-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576508,7 +576508,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-5, 4-7x2, 4-8x2, 5-6x2, 5-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576620,7 +576620,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-8, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:1, 2:1, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576732,7 +576732,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576844,7 +576844,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-6, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -576956,7 +576956,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-5, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -577068,7 +577068,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-6x2, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -577180,7 +577180,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-7, 4-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -577292,7 +577292,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 4-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -577636,7 +577636,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-8, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -577748,7 +577748,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-5, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -577860,7 +577860,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 2-3, 3-4, 3-7, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -577977,7 +577977,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-5, 2-3x2, 2-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -578201,7 +578201,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-6, 2-3x2, 2-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -578425,7 +578425,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-5, 2-3x2, 2-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -578649,7 +578649,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-6, 2-3x2, 2-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -578761,7 +578761,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -578873,7 +578873,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:1, 2:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -578985,7 +578985,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -579097,7 +579097,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -579209,7 +579209,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:1, 2:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -579437,7 +579437,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-8, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 2:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -579549,7 +579549,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3x2, 2-4, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 2:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -579666,7 +579666,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-5, 2-3, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -579778,7 +579778,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-5, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -580002,7 +580002,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-6, 2-3, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -580114,7 +580114,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-6, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -580338,7 +580338,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-5, 2-3, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -580450,7 +580450,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-5, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -580674,7 +580674,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-6, 2-3, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -580786,7 +580786,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-5, 2-3, 3-6, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -580898,7 +580898,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 2:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -581010,7 +581010,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 2:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -581122,7 +581122,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -581234,7 +581234,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 2:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -581346,7 +581346,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 2:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -581574,7 +581574,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-8, 4-5, 4-7, 5-6x3, 7-8x3; legs 2:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -581686,7 +581686,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-8, 2-3, 3-4, 4-5, 4-7, 5-6x3, 7-8x3; legs 2:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -581798,7 +581798,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3, 1-4, 2-3, 3-4, 4-5, 4-7, 5-6x3, 7-8x3; legs 2:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -581915,7 +581915,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-6x2, 4-8, 5-7x2, 5-8, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582027,7 +582027,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582139,7 +582139,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-5, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582251,7 +582251,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-7, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582475,7 +582475,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-8x2, 5-6x2, 5-7x2, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582587,7 +582587,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582811,7 +582811,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-5, 4-8, 5-6x2, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -582923,7 +582923,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-5, 4-8, 5-6x2, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583147,7 +583147,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-7, 2-3x3, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583259,7 +583259,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-6x2, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583483,7 +583483,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-5x2, 4-8, 5-6, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 6:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583595,7 +583595,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 1-8, 2-3x3, 4-5x2, 4-8, 5-6, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583707,7 +583707,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-5x2, 4-8, 5-6, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583819,7 +583819,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5x2, 4-8, 5-6, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -583931,7 +583931,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-5, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584043,7 +584043,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-8x2, 5-6, 5-7, 6-7x2, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584155,7 +584155,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-7x2, 4-8x2, 5-6, 5-7, 6-8, 7-8; legs 1:1, 3:1, 5:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584267,7 +584267,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-7, 2-3x3, 4-6x2, 4-8, 5-7, 5-8x2, 6-7, 6-8; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584379,7 +584379,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-6x2, 4-8, 5-7, 5-8x2, 6-7, 6-8; legs 1:1, 3:1, 5:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584603,7 +584603,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-8, 2-3x3, 4-5x3, 4-8, 5-7, 6-7, 6-8, 7-8; legs 1:1, 3:1, 6:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584827,7 +584827,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-8, 6-7, 7-8; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -584939,7 +584939,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-8, 6-7, 7-8; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585051,7 +585051,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-8, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-8, 6-7, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585163,7 +585163,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-8, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-8, 6-7, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585275,7 +585275,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 1-8, 2-3x3, 4-5x2, 4-7x2, 5-6, 6-8x2, 7-8; legs 1:1, 3:1, 5:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585387,7 +585387,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-7, 2-3x3, 4-5x2, 4-7x2, 5-6, 6-8x2, 7-8; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585499,7 +585499,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-8, 2-3x3, 4-5x2, 4-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 5:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585723,7 +585723,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-5x2, 4-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585835,7 +585835,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -585947,7 +585947,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586059,7 +586059,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-5x2, 4-8, 5-7, 6-7, 6-8, 7-8x2; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586171,7 +586171,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-5, 4-8x2, 5-7x2, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586395,7 +586395,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-5x2, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586507,7 +586507,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 1-8, 2-3x3, 4-6x2, 4-8, 5-7x3, 5-8, 6-7; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586619,7 +586619,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-6x2, 4-8, 5-7x3, 5-8, 6-7; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -586731,7 +586731,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 1-8, 2-3x3, 4-5x2, 4-7x2, 5-6x2, 6-8, 7-8; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -587067,7 +587067,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-7x2, 4-8, 5-7, 5-8x2, 6-7, 6-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -587179,7 +587179,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-6x2, 5-7x2, 6-8x2, 7-8x2; legs 1:1, 3:1, 4:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -587291,7 +587291,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-8x2, 5-6x3, 5-8, 6-7, 7-8; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -587403,7 +587403,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-8, 2-3x3, 4-6x2, 4-7x2, 5-6, 5-7, 6-8, 7-8; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -587515,7 +587515,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -587749,7 +587749,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x3, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -587983,7 +587983,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -588217,7 +588217,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3x3, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -588334,7 +588334,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-3x3, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -588451,7 +588451,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 2-3x3, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:1, 3:1, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -588568,7 +588568,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 2-3x3, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -588685,7 +588685,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 2-3x3, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -588802,7 +588802,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 2-3x3, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -589040,7 +589040,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-8, 2-3x3, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 3:1, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -589157,7 +589157,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 2-3x3, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -589279,7 +589279,7 @@
    "graph": "8 vertices; edges 1-4x2, 1-5, 2-3x2, 2-4, 2-6, 3-4, 5-6x2, 6-7, 7-8x3; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -589391,7 +589391,7 @@
    "graph": "8 vertices; edges 1-4x2, 1-6, 2-3x2, 2-4, 2-5, 3-4, 5-6x2, 6-7, 7-8x3; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -589503,7 +589503,7 @@
    "graph": "8 vertices; edges 1-4x2, 1-5, 2-3x2, 2-4, 2-5, 3-4, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -589615,7 +589615,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 1-6, 2-3, 2-4, 2-5, 3-4, 5-6x2, 6-7, 7-8x3; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -589727,7 +589727,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 1-5, 2-3, 2-4, 2-5, 3-4, 5-7, 6-7x2, 6-8x2, 7-8; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -589839,7 +589839,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3, 2-4, 2-5, 3-4, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -589951,7 +589951,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3, 2-4, 2-6, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -590063,7 +590063,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 2-3, 2-4, 2-5, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -590175,7 +590175,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 1-5, 2-3, 2-4, 2-6, 3-4, 5-6x2, 6-7, 7-8x3; legs 2:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -590287,7 +590287,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 1-6, 2-3, 2-4, 2-5, 3-4, 5-6x2, 6-7, 7-8x3; legs 2:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -590399,7 +590399,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-4, 1-5, 2-3, 2-4, 2-5, 3-4, 5-7, 6-7x2, 6-8x2, 7-8; legs 2:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -590511,7 +590511,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 1-6, 2-3x2, 3-4, 3-5, 5-6x2, 6-7, 7-8x3; legs 2:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -590623,7 +590623,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 1-5, 2-3x2, 3-4, 3-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 2:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -590735,7 +590735,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 1-6, 2-3x2, 2-5, 3-4, 5-6x2, 6-7, 7-8x3; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -590847,7 +590847,7 @@
    "graph": "8 vertices; edges 1-2, 1-4x2, 1-5, 2-3x2, 2-5, 3-4, 5-7, 6-7x2, 6-8x2, 7-8; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -590959,7 +590959,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-6, 2-4x2, 2-5, 3-4x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -591071,7 +591071,7 @@
    "graph": "8 vertices; edges 1-3x2, 1-5, 2-4x2, 2-5, 3-4x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -591183,7 +591183,7 @@
    "graph": "8 vertices; edges 1-2x3, 1-4, 2-3, 3-4, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -591295,7 +591295,7 @@
    "graph": "8 vertices; edges 1-2x3, 1-4, 2-3, 3-4, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -591407,7 +591407,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-3x2, 2-4, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -591519,7 +591519,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-3x2, 2-4, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -591631,7 +591631,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3x2, 2-4, 2-5, 3-4, 4-6, 5-6x2, 6-7, 7-8x3; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -591743,7 +591743,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3x2, 2-4, 2-6, 3-4, 4-5, 5-6x2, 6-7, 7-8x3; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -591855,7 +591855,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-3x2, 2-4, 2-5, 3-4, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 3:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -591967,7 +591967,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-6, 2-3, 2-5, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -592084,7 +592084,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-3, 2-6, 3-4x3, 5-6x2, 6-7, 7-8x3; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -592201,7 +592201,7 @@
    "graph": "8 vertices; edges 1-2x2, 1-5, 2-3, 2-5, 3-4x3, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 2,
@@ -592318,7 +592318,7 @@
    "graph": "8 vertices; edges 1-3, 1-5x2, 2-3x2, 2-4x2, 3-4, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 4:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 1,
@@ -592435,7 +592435,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-5, 3-4, 4-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -592547,7 +592547,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-6, 3-4, 4-5x2, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -592659,7 +592659,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-5, 3-4, 4-5x2, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -592771,7 +592771,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-6, 3-5, 4-5x2, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -592883,7 +592883,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-8, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:1, 2:1, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -592995,7 +592995,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-7, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -593107,7 +593107,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-7, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -593219,7 +593219,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-4, 4-5, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -593447,7 +593447,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-4, 3-6, 4-5, 4-7, 5-6x3, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -593559,7 +593559,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-4, 2-6, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -593671,7 +593671,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-4, 2-5, 3-4x2, 3-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -593783,7 +593783,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-4, 2-5, 3-4x2, 3-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -593895,7 +593895,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-4, 2-5, 3-4x2, 3-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -594007,7 +594007,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-3, 2-6, 3-4x2, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594119,7 +594119,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-3, 2-5, 3-4x2, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594231,7 +594231,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-5, 2-3, 2-5, 3-4x2, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -594343,7 +594343,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-4, 2-6, 3-5x2, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594455,7 +594455,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-3, 2-6, 3-5x2, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594567,7 +594567,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-5, 2-6, 3-4x2, 3-5, 4-5, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594679,7 +594679,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-5, 2-6, 3-4x2, 3-5, 4-5, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594791,7 +594791,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-4, 2-6, 3-4x2, 3-5, 4-5, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -594903,7 +594903,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-5, 2-6, 3-4x2, 3-5, 3-6, 4-5, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595015,7 +595015,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-3, 2-6, 3-4, 3-6, 4-5x3, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 3,
@@ -595132,7 +595132,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-3, 2-8, 3-4, 3-6, 4-5x3, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595244,7 +595244,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x2, 2-6, 3-5, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:1, 3:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595356,7 +595356,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x2, 2-6, 3-4, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595468,7 +595468,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x2, 2-6, 3-5, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595580,7 +595580,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x2, 2-7, 3-4, 4-5, 4-8, 5-6x3, 7-8x2; legs 1:1, 3:1, 6:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595692,7 +595692,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x2, 2-8, 3-4, 4-5, 4-8, 5-6x3, 7-8x2; legs 1:1, 3:1, 6:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595804,7 +595804,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-6, 2-3x2, 3-5, 3-6, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -595916,7 +595916,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-7, 2-4, 2-8, 3-4, 3-7, 4-5, 4-8, 5-6x3, 7-8x2; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596028,7 +596028,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-7, 2-4, 2-8, 3-4, 3-8, 4-5, 4-7, 5-6x3, 7-8x2; legs 1:1, 2:1, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596140,7 +596140,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-4, 2-5, 3-4, 3-6, 4-5, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596252,7 +596252,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-4, 2-5, 3-4, 3-5, 4-6, 5-6x2, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596364,7 +596364,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-4, 2-5, 3-4, 3-5, 4-5, 5-7, 6-7x2, 6-8x2, 7-8; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 4,
@@ -596476,7 +596476,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-6, 3-4, 3-6, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596588,7 +596588,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-6, 3-5, 3-6, 4-5x2, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596700,7 +596700,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-4, 2-3, 2-6, 3-5, 3-6, 4-5x2, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596812,7 +596812,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 1-6, 2-3, 2-5, 2-6, 3-4, 3-6, 4-5x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -596924,7 +596924,7 @@
    "graph": "8 vertices; edges 1-3, 1-4, 1-6, 2-3, 2-4, 2-6, 3-5, 3-6, 4-5x2, 6-7, 7-8x3; legs 1:1, 2:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -597036,7 +597036,7 @@
    "graph": "8 vertices; edges 1-2, 1-3, 1-6, 2-4, 2-5, 3-4, 3-5, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -597148,7 +597148,7 @@
    "graph": "8 vertices; edges 1-4, 1-5, 1-6, 2-4, 2-5, 2-6, 3-4, 3-5, 3-6, 4-5, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -597260,7 +597260,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-5, 2-4, 2-5, 3-4, 3-5, 3-6, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -597372,7 +597372,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 1-6, 2-3, 2-4, 3-4, 3-5, 4-5, 4-6, 5-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -597484,7 +597484,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 1-6, 2-4, 2-5, 2-6, 3-4, 3-5, 4-5, 4-6, 6-7, 7-8x3; legs 1:1, 2:1, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "L": 5,
@@ -641062,7 +641062,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3x3, 4-7x2, 4-8x2, 5-6x3, 5-7, 6-8; legs 1:2, 3:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641178,7 +641178,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 2-3x3, 4-5x2, 4-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641294,7 +641294,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3x3, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641410,7 +641410,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x3, 4-7x2, 4-8, 5-6x3, 5-8, 6-7, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641526,7 +641526,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3x3, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641642,7 +641642,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x3, 4-5, 4-6x2, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641758,7 +641758,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 2-3x3, 4-5x2, 4-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641874,7 +641874,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x3, 4-7x2, 4-8x2, 5-6x2, 5-7, 6-8, 7-8; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -641990,7 +641990,7 @@
    "graph": "8 vertices; edges 1-2, 1-8, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 3:1, 4:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642106,7 +642106,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x3, 4-7x2, 4-8, 5-6x2, 5-7, 5-8, 6-7, 6-8; legs 1:2, 3:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642222,7 +642222,7 @@
    "graph": "8 vertices; edges 1-2, 1-6, 2-3x3, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642338,7 +642338,7 @@
    "graph": "8 vertices; edges 1-2, 1-5, 2-3x3, 4-6x2, 4-8x2, 5-7x2, 5-8, 6-7, 7-8; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642454,7 +642454,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x3, 4-6x2, 4-8, 5-7x2, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642570,7 +642570,7 @@
    "graph": "8 vertices; edges 1-2, 1-7, 2-3x3, 4-5x2, 4-6, 4-8, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -642686,7 +642686,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 2-3x3, 4-6, 4-7, 4-8, 5-6, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 3:1, 5:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -643042,7 +643042,7 @@
    "graph": "8 vertices; edges 1-3, 1-8, 2-3x2, 2-4x2, 3-4, 5-6x3, 5-7, 6-8, 7-8x2; legs 1:2, 4:1, 7:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -643158,7 +643158,7 @@
    "graph": "8 vertices; edges 1-3, 1-7, 2-3x2, 2-4x2, 3-4, 5-6x2, 5-7x2, 6-8x2, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -643274,7 +643274,7 @@
    "graph": "8 vertices; edges 1-3, 1-7, 2-3x2, 2-4x2, 3-4, 5-6x2, 5-7, 5-8, 6-7, 6-8, 7-8; legs 1:2, 4:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -643390,7 +643390,7 @@
    "graph": "8 vertices; edges 1-3, 1-5, 2-3x2, 2-4x2, 3-4, 5-7, 5-8x2, 6-7x2, 6-8, 7-8; legs 1:2, 4:1, 6:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true
@@ -643626,7 +643626,7 @@
    "graph": "8 vertices; edges 1-2, 1-4, 1-7, 2-3x3, 4-5x3, 6-7x2, 6-8x2, 7-8; legs 1:1, 3:1, 5:1, 8:1",
    "onepi": false,
    "vr": true,
-   "fac": false,
+   "fac": true,
    "comp": {
     "core": {
      "tree": true

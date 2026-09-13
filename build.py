@@ -69,11 +69,12 @@ NOTE = (
     'topology -- the internal graph has a cut vertex -- while fac is what the '
     'atlas hides under "non-factorisable only": a structure whose tensor really '
     'splits into lower ones.  They differ on the leg-dressed structures, where a '
-    'dressing always makes a cut vertex but the beta contribution of a '
-    'wave-function renormalisation still counts as irreducible so long as the '
-    'self-energy inserted, and the core it dresses, are themselves irreducible; '
-    'a chain of insertions on one leg, or a factorisable core, makes it '
-    'factorisable.')
+    'dressing always makes a cut vertex: fac keeps only a pure wave-function '
+    'renormalisation -- a tree-level vertex with one irreducible self-energy '
+    'on one leg -- and counts a vertex correction dressed on a leg, or '
+    'dressings on more than one leg, as factorisable.  The pure wave-function '
+    'renormalisations are exactly the dressed structures with non-vanishing '
+    'beta.')
 
 
 def extract_data(html):

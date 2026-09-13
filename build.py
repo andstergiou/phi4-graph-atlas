@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 r"""Build the published phi^4 atlas: index.html and the JSON export.
 
-The atlas itself is generated in the research repo with
-
-    python schnetz/extracted/graph_viewer.py 7      -> graph_atlas.html
-
-This script turns that file into what the site serves:
+The atlas page is generated elsewhere, as graph_atlas.html.  This script turns that
+file into what the site serves:
 
   index.html       the generated page, plus a doctype and a UTF-8 charset (the
                    generator emits neither, so the page is mojibake unless the
                    server announces UTF-8) and one header line giving the data's
                    provenance and a link to the export.
-  phi4_atlas.json  the full data set, in the shape of the project's
-                   renorm_L*.json: a structures list and expressions keyed by
-                   structure id, for every loop order at once.
+  phi4_atlas.json  the full data set: a structures list and expressions keyed
+                   by structure id, for every loop order at once.
 
-    python build.py [path/to/research/repo/schnetz/extracted_results]
+    python build.py <directory containing graph_atlas.html>
 """
 
 import json
@@ -23,9 +19,6 @@ import os
 import re
 import sys
 
-SRC_DEFAULT = os.path.expanduser(
-    '~/Gits/Papers/Gradient Properties of Perturbative Multiscalar RG Flows '
-    'to Six Loops/schnetz/extracted_results')
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = 'https://github.com/andstergiou/phi4-graph-atlas'
 JSON_NAME = 'phi4_atlas.json'
@@ -44,7 +37,7 @@ CSS = (CONV_RULE +
 
 TABS = '<div class="tabs" id="tabs" role="tablist"></div>'
 
-# Names the renorm_L*.json files use, so the export lines up with them.
+# Page field -> key of the expression map in the export.
 FOUR_POINT = {'beta': 'beta', 'beta_z': 'beta_z', 'Z': 'Z_lambda'}
 TWO_POINT = {'u': 'Zphi_minus_half', 'gamma': 'gamma_phi', 'gammaOn': 'gamma_phi_On'}
 META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
@@ -99,7 +92,7 @@ def extract_data(html):
 
 
 def export(data, out):
-    """Write the full set in the shape of renorm_L*.json."""
+    """Write the full set as one JSON document."""
     by_loop = {}
     for e in data:
         by_loop[e['L']] = by_loop.get(e['L'], 0) + 1
@@ -147,10 +140,12 @@ def credit(n_structures, mb):
 
 
 def main():
-    src = sys.argv[1] if len(sys.argv) > 1 else SRC_DEFAULT
+    if len(sys.argv) != 2:
+        raise SystemExit('usage: python build.py <directory containing graph_atlas.html>')
+    src = sys.argv[1]
     path = os.path.join(src, 'graph_atlas.html')
     if not os.path.exists(path):
-        raise SystemExit(f'missing {path} — regenerate it with graph_viewer.py 7')
+        raise SystemExit(f'missing {path}')
     with open(path) as fh:
         html = fh.read()
 

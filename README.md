@@ -29,6 +29,10 @@ and the 807 undressed ones all have vanishing β under minimal subtraction: the 
 structure with β = 0 that survives the filter is V5.60, the accidental zero at five
 loops. It is the same test as `is_1vr` in the project's `PredictSevenLoopEpsilon.py`.
 
+**β only** and **γ only** restrict the list to the structures contributing to the beta
+function or to the anomalous dimension; **all** puts them back. The page opens on the
+one-loop beta structure, V1.1.
+
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph

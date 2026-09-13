@@ -37,12 +37,20 @@ header h1{font-family:var(--serif);font-weight:400;font-size:22px;margin:0;lette
 .dl:hover{border-color:var(--accent);color:var(--accent-ink)}
 header h1 small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:10px;letter-spacing:.04em;text-transform:uppercase}
 header h1 small .sym{text-transform:none;font-family:var(--serif);font-size:13px;letter-spacing:0}
-.tabs{display:flex;gap:4px;margin-left:2rem}
+.rowbreak{flex-basis:100%;height:0;margin:0}
+.tabs{display:flex;gap:4px}
 .tabs button{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
 .tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 :root[data-theme="dark"] .tabs button[aria-pressed="true"]{color:#0F1E20}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-pressed="true"]{color:#0F1E20}}
 header input{font:14px var(--sans);padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:260px}
+.kinds{display:flex;gap:4px;margin-left:14px}
+.kinds button{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
+.kinds button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .kinds button[aria-pressed="true"]{color:#0F1E20}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kinds button[aria-pressed="true"]{color:#0F1E20}}
+.kinds .sym{font-family:var(--serif);font-size:15px}
+.count .sym{text-transform:none;font-family:var(--serif);font-size:13px;letter-spacing:0}
 .irr{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);white-space:nowrap;cursor:pointer}
 .irr input{width:auto;padding:0;border:0;background:none;accent-color:var(--accent);cursor:pointer}
 header input:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
@@ -52,7 +60,7 @@ aside{border-right:1px solid var(--line);background:var(--panel);display:flex;fl
 aside .count{padding:8px 14px;font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--line-soft)}
 #list{overflow:auto;flex:1;margin:0;padding:0;list-style:none;position:relative}
 #list .spacer{position:relative;width:100%}
-#list li{position:absolute;left:0;right:0;height:54px;box-sizing:border-box;padding:7px 14px;border-bottom:1px solid var(--line-soft);cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:baseline;overflow:hidden}
+#list li{position:absolute;left:0;right:0;height:64px;box-sizing:border-box;padding:7px 14px;border-bottom:1px solid var(--line-soft);cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:baseline;overflow:hidden}
 #list li:hover{background:var(--bg)}
 #list li[aria-selected="true"]{background:var(--accent-soft)}
 #list .name{font-family:var(--serif);font-size:15px;font-variant-numeric:tabular-nums}
@@ -101,10 +109,16 @@ dd.mono{font-family:var(--mono);font-size:12px;line-height:1.6}
   <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β</span><sub>ijkl</sub> and <span class="sym">γ<sub>φ</sub></span></small></h1>
   <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so β̂ = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1).</div>
   <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and every coefficient shown here were extracted and recomputed by tensorial minimal subtraction (MS-bar) with Claude Fable 5.1. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (8.7 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
+  <div class="rowbreak"></div>
   <div class="tabs" id="tabs" role="tablist"></div>
   <a class="dl" href="phi4_atlas.json" download>Download JSON</a>
   <input id="search" type="search" placeholder="Filter: V6.12, D5.3, S2.1, #431, f_7 …" aria-label="Filter structures">
   <label class="irr" title="Hide the one-vertex-reducible structures: those whose internal graph has a cut vertex, so the tensor factorises through a single vertex. Every leg-dressed structure and every propagator chain is one of these, and the undressed ones all have vanishing beta."><input type="checkbox" id="irr"> non-factorisable only</label>
+  <div class="kinds" id="kinds" role="group" aria-label="Restrict to the beta or the gamma structures">
+    <button data-kind="" aria-pressed="true" title="Every structure">all</button>
+    <button data-kind="4" aria-pressed="false" title="Only the structures contributing to the beta function">β only</button>
+    <button data-kind="2" aria-pressed="false" title="Only the propagator structures contributing to the anomalous dimension">γ only</button>
+  </div>
 </header>
 <main>
   <aside>
@@ -160,15 +174,16 @@ const G = t => '<span class="sym">'+t+'</span>';   // Greek inside a small-caps 
 function prettyN(s){ return pretty(s).replace(/\bn\b/g,'N'); }   // O(N) polynomials: capital N
 
 // ---- list ----
-let current = null, L = orders[orders.length-1], filter = '', irrOnly = false;
+let current = null, L = orders[0], filter = '', irrOnly = false, kindOnly = '';
 const tabs = $('tabs');
 for (const o of orders){
   const b = document.createElement('button'); b.textContent = o + (o===1?' loop':' loops'); b.setAttribute('role','tab');
-  b.onclick = ()=>{ L = o; renderTabs(); renderList(); select(ITEMS[0]); };
+  b.onclick = ()=>{ L = o; renderTabs(); renderList(); syncSelection(true); };
   tabs.appendChild(b);
 }
 function renderTabs(){ [...tabs.children].forEach((b,i)=>b.setAttribute('aria-pressed', orders[i]===L)); }
 function matches(s){
+  if (kindOnly && s.kind !== kindOnly) return false;
   if (irrOnly && s.vr) return false;
   if (!filter) return true;
   const hay = [s.num, '#'+s.id, s.graph, s.tensor, s.beta||'', s.beta_z||'', s.kind==='2'?'two-point propagator':'four-point', s.num[0]==='D'?'dressed':(s.num[0]==='V'?'1pi vertex':''), s.vr?'one-vertex reducible factorisable':'non-factorisable'].join(' ').toLowerCase();
@@ -177,16 +192,21 @@ function matches(s){
 const ORDER = {V:0, D:1, S:2};
 function numKey(s){ const m = /^([VDS])(\d+)\.(\d+)$/.exec(s.num); return m ? [ORDER[m[1]], +m[3]] : [9, s.id]; }
 for (const o of orders) byL[o].sort((a, b) => { const ka = numKey(a), kb = numKey(b); return ka[0]-kb[0] || ka[1]-kb[1]; });
-const ROW = 54;
+const ROW = 64;
 let ITEMS = [];
 const listEl = $('list');
 const spacer = document.createElement('div'); spacer.className = 'spacer'; listEl.appendChild(spacer);
 function renderList(){
   ITEMS = byL[L].filter(matches);
-  $('count').textContent = ITEMS.length + ' of ' + byL[L].length + ' structures at ' + L + (L===1?' loop':' loops') + (irrOnly?' · non-factorisable only':'');
+  $('count').innerHTML = ITEMS.length + ' of ' + byL[L].length + ' structures at ' + L + (L===1?' loop':' loops')
+    + (kindOnly ? ' · '+G(kindOnly==='4'?'β':'γ<sub>φ</sub>')+' only' : '') + (irrOnly?' · non-factorisable only':'');
   spacer.style.height = (ITEMS.length*ROW) + 'px';
   listEl.scrollTop = 0;
   renderWindow();
+}
+function syncSelection(force){
+  if (!ITEMS.length){ current = null; markSelected(); svg.selectAll('*').remove(); $('details').innerHTML = '<div class="tbl">Nothing matches the current filters.</div>'; return; }
+  if (force || !current || !matches(current) || current.L !== L) select(ITEMS[0]);
 }
 function rowHTML(s){
   return '<span class="name'+(s.num[0]==='D'?' d':'')+'">'+s.num+'</span><span class="meta">'+(s.kind==='2'?'2-pt':'4-pt')+' · #'+s.id+'</span>'
@@ -215,8 +235,13 @@ function revealCurrent(){
   renderWindow();
 }
 $('search').addEventListener('input', e => { filter = e.target.value.trim().toLowerCase(); renderList(); });
-$('irr').addEventListener('change', e => { irrOnly = e.target.checked; renderList();
-  if (!current || !matches(current)) select(ITEMS[0]); });
+$('irr').addEventListener('change', e => { irrOnly = e.target.checked; renderList(); syncSelection(false); });
+const kindBtns = [...$('kinds').children];
+kindBtns.forEach(b => b.onclick = ()=>{
+  kindOnly = b.dataset.kind;
+  kindBtns.forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderList(); syncSelection(false);
+});
 $('list').addEventListener('keydown', e => {
   if (e.key!=='ArrowDown' && e.key!=='ArrowUp') return;
   e.preventDefault();
@@ -419,6 +444,6 @@ window.addEventListener('resize', ()=>{ if (sim){ const [W,H]=size(); sim.force(
 let start = null;
 const m = /#L(\d+)-(\d+)/.exec(location.hash);
 if (m && byL[+m[1]]) { L = +m[1]; start = byL[L].find(s=>s.id===+m[2]); }
-renderTabs(); renderList(); select(start || byL[L][0]);
+renderTabs(); renderList(); select(start || byL[L].find(s=>s.kind==='4') || byL[L][0]);
 })();
 </script>

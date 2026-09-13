@@ -44,8 +44,15 @@ header h1 small .sym{text-transform:none;font-family:var(--serif);font-size:13px
 :root[data-theme="dark"] .tabs button[aria-pressed="true"]{color:#0F1E20}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-pressed="true"]{color:#0F1E20}}
 header input{font:14px var(--sans);padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:260px}
-.kinds{display:flex;gap:4px;margin-left:14px}
-.kinds[hidden]{display:none}
+.kinds{display:flex;gap:4px}
+.kindtree{display:flex;flex-direction:column;align-items:flex-start;margin-left:14px}
+.branch{position:relative;padding-top:32px}
+.branch[hidden]{display:none}
+.branch svg{position:absolute;left:0;top:0;width:1px;height:32px;overflow:visible;pointer-events:none}
+.branch .arrow{fill:none;stroke:var(--muted);stroke-width:1.3}
+.branch .head{fill:var(--muted)}
+.branch .arrow.on{stroke:var(--accent)}
+.branch .head.on{fill:var(--accent)}
 .kinds button{font:500 13px var(--sans);padding:5px 11px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
 .kinds button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 :root[data-theme="dark"] .kinds button[aria-pressed="true"]{color:#0F1E20}
@@ -130,7 +137,7 @@ dd.copyable .tex:hover{border-color:var(--accent);color:var(--accent-ink)}
   .tabs{flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
   .tabs button{flex:none}
   header input[type=search]{flex:1 1 160px;width:auto;min-width:0}
-  .kinds{margin-left:0}
+  .kindtree{margin-left:0}
   .toolbar{padding:8px 10px}
   .toolbar .hint{display:none}
   .toolbar label{margin-left:0}
@@ -149,15 +156,20 @@ dd.copyable .tex:hover{border-color:var(--accent);color:var(--accent-ink)}
   <a class="dl" href="phi4_atlas.json" download>Download JSON</a>
   <input id="search" type="search" placeholder="Filter: V6.12, D5.3, S2.1, #431, f_7 …" aria-label="Filter structures">
   <label class="irr" title="Hide the structures whose tensor splits into lower ones: an undressed structure with a cut vertex, a propagator chain, and every leg-dressed structure except a pure wave-function renormalisation — a tree-level vertex with one irreducible self-energy on one leg. Vertex corrections dressed on a leg and dressings on more than one leg are hidden."><input type="checkbox" id="irr"> non-factorisable only</label>
+  <div class="kindtree">
   <div class="kinds" id="kinds" role="group" aria-label="Restrict to the beta or the gamma structures">
     <button data-kind="" aria-pressed="true" title="Every structure">all</button>
     <button data-kind="4" aria-pressed="false" title="Only the structures contributing to the beta function">β only</button>
     <button data-kind="2" aria-pressed="false" title="Only the propagator structures contributing to the anomalous dimension">γ only</button>
   </div>
-  <div class="kinds" id="syms" role="group" aria-label="Restrict the anomalous-dimension structures by symmetry under exchanging the external legs" hidden>
-    <button data-sym="" aria-pressed="true" title="Every propagator structure">all</button>
-    <button data-sym="sym" aria-pressed="false" title="Only the structures symmetric under exchanging the two external legs">symmetric</button>
-    <button data-sym="asym" aria-pressed="false" title="Only the structures not symmetric under exchanging the two external legs">asymmetric</button>
+  <div class="branch" id="branch" hidden>
+    <svg id="arrows" aria-hidden="true"></svg>
+    <div class="kinds" id="syms" role="group" aria-label="Restrict the anomalous-dimension structures by symmetry under exchanging the external legs">
+      <button data-sym="" aria-pressed="true" title="Every propagator structure">all</button>
+      <button data-sym="sym" aria-pressed="false" title="Only the structures symmetric under exchanging the two external legs">symmetric</button>
+      <button data-sym="asym" aria-pressed="false" title="Only the structures not symmetric under exchanging the two external legs">asymmetric</button>
+    </div>
+  </div>
   </div>
 </header>
 <main>
@@ -376,6 +388,30 @@ $('details').addEventListener('click', ev => {
 $('irr').addEventListener('change', e => { irrOnly = e.target.checked; renderList(); syncSelection(false); });
 const kindBtns = [...$('kinds').children];
 const symBtns = [...$('syms').children];
+function drawBranch(){
+  const branch = $('branch');
+  if (branch.hidden) return;
+  const syms = $('syms'), H = $('arrows').getBoundingClientRect().height || 32;   // the fan's height comes from the CSS
+  syms.style.transform = 'none';
+  const br = branch.getBoundingClientRect(), sr = syms.getBoundingClientRect();
+  const gb = kindBtns.find(b => b.dataset.kind === '2').getBoundingClientRect();
+  const hd = document.querySelector('header'), hs = getComputedStyle(hd), hr = hd.getBoundingClientRect();
+  const minL = hr.left + parseFloat(hs.paddingLeft), maxR = hr.right - parseFloat(hs.paddingRight);
+  const rects = symBtns.map(b => b.getBoundingClientRect());
+  let left = gb.left + gb.width/2 - sr.width/2;                     // centred under gamma only
+  left = Math.max(minL, Math.min(left, maxR - sr.width));           // but kept inside the header
+  const shift = left - sr.left;
+  syms.style.transform = 'translateX(' + shift + 'px)';
+  const gx = gb.left + gb.width/2 - br.left;
+  $('arrows').innerHTML = symBtns.map((b, k) => {
+    const bx = rects[k].left + shift + rects[k].width/2 - br.left;
+    const on = b.getAttribute('aria-pressed') === 'true' ? ' on' : '';
+    return '<path class="arrow' + on + '" d="M' + gx + ',1 C' + gx + ',' + (H*0.55) + ' ' + bx + ',' + (H*0.4) + ' ' + bx + ',' + (H-7) + '"/>'
+         + '<path class="head' + on + '" d="M' + (bx-4) + ',' + (H-8) + ' L' + (bx+4) + ',' + (H-8) + ' L' + bx + ',' + (H-1) + ' Z"/>';
+  }).join('');
+}
+window.addEventListener('resize', drawBranch);
+if (window.ResizeObserver) new ResizeObserver(drawBranch).observe(document.querySelector('header'));
 function setSym(value){
   symOnly = value;
   symBtns.forEach(x => x.setAttribute('aria-pressed', x.dataset.sym === value));
@@ -384,10 +420,11 @@ kindBtns.forEach(b => b.onclick = ()=>{
   kindOnly = b.dataset.kind;
   kindBtns.forEach(x => x.setAttribute('aria-pressed', x === b));
   setSym('');                                   // gamma only opens on all
-  $('syms').hidden = kindOnly !== '2';
+  $('branch').hidden = kindOnly !== '2';
+  drawBranch();
   renderList(); syncSelection(false);
 });
-symBtns.forEach(b => b.onclick = ()=>{ setSym(b.dataset.sym); renderList(); syncSelection(false); });
+symBtns.forEach(b => b.onclick = ()=>{ setSym(b.dataset.sym); drawBranch(); renderList(); syncSelection(false); });
 $('list').addEventListener('keydown', e => {
   if (e.key!=='ArrowDown' && e.key!=='ArrowUp') return;
   e.preventDefault();

@@ -41,8 +41,8 @@ one-loop beta structure, V1.1.
 
 Every anomalous-dimension structure is marked **symmetric** or **asymmetric**, according to
 whether its graph is unchanged under exchanging the two external legs. Under **γ only** a
-second control appears — all · symmetric · asymmetric — opening on all each time γ only is
-chosen. Of the 305 propagator structures 117 are symmetric and 188 asymmetric; asymmetric
+second row branches from it, arrows fanning out to all · symmetric · asymmetric; it opens on
+all each time γ only is chosen. Of the 305 propagator structures 117 are symmetric and 188 asymmetric; asymmetric
 ones first appear at five loops (5 of 12), and at seven loops they outnumber the symmetric
 160 to 70. The registry is unoriented, so an asymmetric graph appears once and stands for
 both orientations.

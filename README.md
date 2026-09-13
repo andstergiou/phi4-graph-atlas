@@ -6,6 +6,8 @@ minimal subtraction (MS-bar).
 
 **→ [andstergiou.github.io/phi4-graph-atlas](https://andstergiou.github.io/phi4-graph-atlas/)**
 
+Its cubic companion is the [φ³ Graph Atlas](https://andstergiou.github.io/phi3-graph-atlas/).
+
 ## What is in it
 
 6117 structures: 5812 four-point structures and 305 two-point structures, by loop

@@ -168,7 +168,7 @@ let current = null, L = orders[orders.length-1], filter = '', irrOnly = false;
 const tabs = $('tabs');
 for (const o of orders){
   const b = document.createElement('button'); b.textContent = o + (o===1?' loop':' loops'); b.setAttribute('role','tab');
-  b.onclick = ()=>{ L = o; renderTabs(); renderList(); select(byL[L][0]); };
+  b.onclick = ()=>{ L = o; renderTabs(); renderList(); select(ITEMS[0]); };
   tabs.appendChild(b);
 }
 function renderTabs(){ [...tabs.children].forEach((b,i)=>b.setAttribute('aria-pressed', orders[i]===L)); }
@@ -220,7 +220,8 @@ function revealCurrent(){
   renderWindow();
 }
 $('search').addEventListener('input', e => { filter = e.target.value.trim().toLowerCase(); renderList(); });
-$('irr').addEventListener('change', e => { irrOnly = e.target.checked; renderList(); });
+$('irr').addEventListener('change', e => { irrOnly = e.target.checked; renderList();
+  if (!current || !matches(current)) select(ITEMS[0]); });
 $('list').addEventListener('keydown', e => {
   if (e.key!=='ArrowDown' && e.key!=='ArrowUp') return;
   e.preventDefault();

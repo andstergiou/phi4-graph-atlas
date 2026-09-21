@@ -188,18 +188,14 @@ and `I` occur in exactly one structure, V7.2855, in its β and Z_λ.
 The weights behave as they should: the heaviest f-word in β at L loops is weight
 2L − 3 — 3, 5, 7, 9, 11 at L = 3…7.
 
-
 ## Provenance and citation
 
 The graph ordering and the seven-loop input data come from Oliver Schnetz's Maple
 package [HyperlogProcedures](https://github.com/oliverschnetz/HyperlogProcedures),
 version 0.8, and the seven-loop calculation it implements. The coefficients displayed
-here are not copied from the package: they are recomputed structure by structure by
-tensorial minimal subtraction, in an independent Python implementation, and checked
-against the published O(N)-symmetric results.
-
-The structures and coefficients were extracted from HyperlogProcedures and recomputed
-with **Claude Fable 5.1**.
+here were not copied from the package: they were extracted by **Claude Fable 5.1**
+with an independent Python implementation of the forest formula, and checked against
+Schnetz's published O(N)-symmetric results. The integrals were not recomputed by AI.
 
 If you use this atlas, please cite Schnetz's work alongside it:
 

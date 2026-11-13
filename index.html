@@ -192,9 +192,9 @@ dd.copyable .tex:hover{border-color:var(--accent);color:var(--accent-ink)}
 @media (hover:none){dd.copyable .tex{opacity:1}}
 </style>
 <header>
-  <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β<sub>ijkl</sub></span> and <span class="sym">γ<sub>φ</sub></span></small></h1>
+  <h1>φ⁴ Graph Atlas <small>tensor structures of <span class="sym">β<sub>ijkl</sub></span>, <span class="sym">(γ<sub>φ</sub>)<sub>ij</sub></span> and <span class="sym">υ<sub>ij</sub></span></small></h1>
   <button class="about-toggle" id="about" type="button" aria-expanded="false">Conventions and sources</button>
-  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so <span class="hat">β</span> = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1). S&nbsp;=&nbsp;1/|Aut| is the symmetry factor, automorphisms counted with the external legs held fixed and parallel lines included. |stab| counts the permutations of ijkl (ij for a propagator) leaving the tensor unchanged, orbit = 24/|stab| (2/|stab|) its distinct terms; every coefficient multiplies their sum, so β<sub>L</sub> = L·(1/ε residue of Z<sub>λ</sub>) and γ<sub>φ,L</sub> = −L·(1/ε residue of Z<sub>φ</sub><sup>−½</sup>). The O(N) value is that of one term, so a structure contributes coefficient × orbit × O(N) value / 3<sup>V</sup> at O(N), V its number of vertices (V1.1: 1 × 3 × (N + 8)/9 = (N + 8)/3). The 163 asymmetric 1PI propagator structures at five to seven loops also carry υ<sup>(L)</sup><sub>m</sub>, their coefficient in the antisymmetric υ<sub>ij</sub> of the gradient-flow vector field B<sub>ijkl</sub> = β<sub>ijkl</sub> − (υ<sub>im</sub>λ<sub>mjkl</sub> + perms): υ<sub>ij</sub> = υ<sup>(L)</sup><sub>m</sub> (G<sub>ji</sub> − G<sub>ij</sub>) + …, with G<sub>ij</sub> the tensor shown. υ is the S of <a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a> and υ<sup>(L)</sup><sub>m</sub> its s<sup>(L)</sup><sub>m</sub>. Their marked pole tables open below the drawing. The gradient-flow conditions on these coefficients through seven loops, in d = 4 and d = 4 − ε, are on the <a href="conditions.html">conditions page</a>; each coefficient lists the conditions it enters.</div>
+  <div class="conv">Conventions: d = 4 − ε, λ<sub>0</sub> = μ<sup>ε</sup>(λ + Z-poles), so <span class="hat">β</span> = −ελ + β and an L-loop 1/ε residue a<sub>1</sub> gives β<sub>L</sub> = L·a<sub>1</sub>, γ<sub>L</sub> = L·(residue of Z<sub>φ</sub><sup>1/2</sup>); the loop factor 1/(16π²) is absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> + 2 perms with coefficient 1 (V1.1) and (γ<sub>φ</sub>)<sub>ij</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub> at two loops (S2.1). S&nbsp;=&nbsp;1/|Aut| is the symmetry factor, automorphisms counted with the external legs held fixed and parallel lines included. |stab| counts the permutations of ijkl (ij for a propagator) leaving the tensor unchanged, orbit = 24/|stab| (2/|stab|) its distinct terms; every coefficient multiplies their sum, so β<sub>L</sub> = L·(1/ε residue of Z<sub>λ</sub>) and γ<sub>φ,L</sub> = −L·(1/ε residue of Z<sub>φ</sub><sup>−½</sup>). The O(N) value is that of one term, so a structure contributes coefficient × orbit × O(N) value / 3<sup>V</sup> at O(N), V its number of vertices (V1.1: 1 × 3 × (N + 8)/9 = (N + 8)/3). The 163 asymmetric 1PI propagator structures at five to seven loops also carry υ<sup>(L)</sup><sub>m</sub>, their coefficient in the antisymmetric υ<sub>ij</sub> of the gradient-flow vector field B<sub>ijkl</sub> = β<sub>ijkl</sub> − (υ<sub>im</sub>λ<sub>mjkl</sub> + perms): υ<sub>ij</sub> = υ<sup>(L)</sup><sub>m</sub> (G<sub>ji</sub> − G<sub>ij</sub>) + …, with G<sub>ij</sub> the tensor shown. υ is the S of <a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a> and υ<sup>(L)</sup><sub>m</sub> its s<sup>(L)</sup><sub>m</sub>. Their marked pole tables open below the drawing. The gradient-flow conditions on these coefficients through seven loops, in d = 4 and d = 4 − ε, are on the <a href="conditions.html">conditions page</a>; each coefficient lists the conditions it enters.</div>
   <div class="prov">Graph ordering and the seven-loop input data follow O. Schnetz's <a href="https://github.com/oliverschnetz/HyperlogProcedures">HyperlogProcedures</a> 0.8; the structures and their β and γ coefficients were extracted and recomputed by tensorial minimal subtraction (MS-bar) with Claude Fable 5.1. The full calculation of υ, the S of <a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a>, with its marked pole tables, was performed by Claude Fable 5.1 and GPT-6 Astra. The full set of 6117 structures is available as <a href="phi4_atlas.json" download>phi4_atlas.json</a> (9.4 MB). Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
   <div class="rowbreak"></div>
   <div class="tabs" id="tabs" role="tablist"></div>
@@ -731,7 +731,7 @@ function gradData(){
   if (!gradLoad) gradLoad = fetch('phi4_gradient.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
     const idx = {};
     for (const c of d.conditions){
-      const key = (c.eps ? 'e' : '4') + c.metric, seen = new Set(), lin = new Set();
+      const key = (c.eps_only ? 'e' : '4') + c.first_needed_by, seen = new Set(), lin = new Set();
       for (const t of c.terms) for (const f of t[1]){
         if (t[1].length === 1) lin.add(f);
         if (seen.has(f)) continue;
@@ -756,13 +756,18 @@ function gradBlock(s){
     const e = GD.idx[s.id];
     const what = s.ups ? 'The coefficient '+name : 'The '+G('β')+' coefficient of '+name;
     if (!e){ $('grad').innerHTML = head + what+' enters none of the '+GD.total+' conditions.'; return; }
-    const row = (lab, d) => '<tr><td>'+lab+'</td>'+['general','quasi-gradient','gradient'].map(m => '<td>'+(e.by[d+m] || 0)+'</td>').join('')+'</tr>';
+    // how many of them each flow needs: a stronger ansatz needs the weaker ones' conditions, d = 4 - eps those of d = 4
+    const b = k => e.by[k] || 0;
+    const n4 = [b('4general')]; n4.push(n4[0] + b('4quasi-gradient')); n4.push(n4[1] + b('4gradient'));
+    const ne = [n4[0] + b('egeneral')]; ne.push(n4[1] + b('egeneral') + b('equasi-gradient')); ne.push(e.n);
+    const row = (lab, v) => '<tr><td>'+lab+'</td>'+v.map(x => '<td>'+x+'</td>').join('')+'</tr>';
     const lead = e.lead.length ? ' It leads '+e.lead.slice(0, 6).map(id => '<a href="conditions.html#'+id+'">'+id+'</a>').join(', ')+(e.lead.length > 6 ? ' and '+(e.lead.length-6)+' more' : '')+'.' : '';
     const how = e.lin === e.n ? ', always as a single term.' : e.lin === 0 ? ', always multiplied by other coefficients.'
       : ': in '+e.lin+' as a single term and in the other '+(e.n - e.lin)+' only multiplied by other coefficients.';
     $('grad').innerHTML = head + what+' enters '+e.n+' of the '+GD.total+' conditions'+how+lead
-      + '<table><thead><tr><th></th><th>general</th><th>quasi-gradient</th><th>gradient</th></tr></thead><tbody>'
-      + row('d = 4', '4') + row('d = 4 − ε', 'e') + '</tbody></table>'
+      + ' How many of them each flow needs:'
+      + '<table><thead><tr><th></th><th>any T<sub>IJ</sub></th><th>quasi-gradient</th><th>gradient</th></tr></thead><tbody>'
+      + row('d = 4', n4) + row('d = 4 − ε', ne) + '</tbody></table>'
       + '<a href="conditions.html#q='+encodeURIComponent(q)+'">List them on the conditions page</a>';
   }, () => {
     if (current !== s || !$('grad')) return;

@@ -1,8 +1,8 @@
 # φ⁴ Graph Atlas
 
 An interactive atlas of the tensor structures of the multiscalar φ⁴ beta function
-β<sub>ijkl</sub> and the anomalous dimension γ<sub>φ</sub>, through seven loops, in
-minimal subtraction (MS-bar).
+β<sub>ijkl</sub>, the anomalous dimension (γ<sub>φ</sub>)<sub>ij</sub> and the antisymmetric υ<sub>ij</sub> of the
+gradient-flow vector field, through seven loops, in minimal subtraction (MS-bar).
 
 **→ [andstergiou.github.io/phi4-graph-atlas](https://andstergiou.github.io/phi4-graph-atlas/)**
 
@@ -19,11 +19,11 @@ graph and comes with
 - its number in Schnetz's enumeration
   (V = 1PI vertex structures, D = leg-dressed, S = propagator structures),
 - the tensor contraction and the O(N) value,
-- the β and counterterm (Z) coefficients, and γ where it contributes,
+- the β and counterterm (Z) coefficients, and γ and υ where they contribute,
 - the symmetry factor S = 1/|Aut|, and |stab| and orbit, which say how the tensor behaves
   under permuting its external indices,
 - whether the graph is primitive,
-- for the 163 asymmetric 1PI propagator structures at five to seven loops, the coefficient of the antisymmetric υ and its marked pole tables,
+- for the 163 asymmetric 1PI propagator structures at five to seven loops, which carry υ, its marked pole tables,
 - for every β and υ coefficient, the gradient-flow conditions it enters,
 - a TikZ export of the drawing exactly as it appears on screen.
 
@@ -117,7 +117,7 @@ addressable: `…/#L7-789`.
 
 Conventions are stated in the page header: d = 4 − ε, λ₀ = μ^ε(λ + Z-poles), the loop
 factor 1/(16π²) absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<sub>mnkl</sub> +
-2 permutations with coefficient 1 and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub>
+2 permutations with coefficient 1 and (γ<sub>φ</sub>)<sub>ij</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub>
 at two loops.
 
 ## The antisymmetric υ
@@ -144,28 +144,30 @@ The conditions are derived order by order in the covariant form of the gradient 
 
 Each condition is reduced modulo the lower-loop conditions times monomials, so it carries no multiple of a lower one. The reduction also replaces a coefficient that leads a lower-loop condition wherever it would appear in a product. That is why V4.13 occurs only in G4.2.
 
-Each condition sits in the first layer that needs it:
+The three ansätze for T<sub>IJ</sub> are nested:
 
-| layer | needed for |
+| ansatz | T<sub>IJ</sub> |
 | --- | --- |
-| general | an arbitrary T<sub>IJ</sub>: a potential has to exist at all |
-| quasi-gradient | the form T<sub>IJ</sub> = G<sub>IJ</sub> + ∂<sub>[I</sub>w<sub>J]</sub>, beyond an arbitrary T<sub>IJ</sub> |
-| gradient | a symmetric metric G<sub>IJ</sub>, beyond the quasi-gradient form |
+| any T<sub>IJ</sub> | arbitrary: a potential A merely exists |
+| quasi-gradient | G<sub>IJ</sub> + ∂<sub>[I</sub>w<sub>J]</sub>, with G<sub>IJ</sub> symmetric |
+| gradient | a symmetric metric G<sub>IJ</sub> |
 
-In d = 4 − ε the same three layers follow, beyond everything in d = 4. The counts:
+Each ansatz needs every condition of the ones above it, and d = 4 − ε needs every condition of d = 4. Gradient flow in d = 4 − ε therefore needs all of them. The number of conditions each ansatz needs:
 
-| loops | d = 4 general | quasi-gradient | gradient | d = 4 − ε general | quasi-gradient | gradient | total |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 4 | 4 | 0 | 0 | 0 | 0 | 0 | 4 |
-| 5 | 28 | 5 | 4 | 4 | 0 | 0 | 41 |
-| 6 | 144 | 49 | 32 | 32 | 5 | 4 | 266 |
-| 7 | 899 | 391 | 191 | 176 | 54 | 36 | 1747 |
+| loops | d = 4: any T<sub>IJ</sub> | quasi-gradient | gradient | d = 4 − ε: any T<sub>IJ</sub> | quasi-gradient | gradient |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4 | 4 | 4 | 4 | 4 | 4 | 4 |
+| 5 | 28 | 33 | 37 | 32 | 37 | 41 |
+| 6 | 144 | 193 | 225 | 176 | 230 | 266 |
+| 7 | 899 | 1290 | 1481 | 1075 | 1520 | 1747 |
+
+Each condition is marked with the weakest ansatz that already needs it, and with whether only d = 4 − ε needs it. At four loops all four conditions are needed already for any T<sub>IJ</sub>. Going from any T<sub>IJ</sub> to the quasi-gradient form adds 0, 5, 49 and 391 conditions at four to seven loops, and going on to a symmetric metric adds 0, 4, 32 and 191. The page can show either all the conditions an ansatz needs or only those new at its level.
 
 Through six loops the conditions agree with those of arXiv:2402.17817, up to multiples of lower-loop conditions. In d = 4 − ε there are 41 at six loops rather than the 32 published, and the 32 lie among them. At seven loops d = 4 − ε adds 266, 230 and 176 conditions for the gradient, quasi-gradient and general metrics. These are the d = 4 counts at six, five and four loops added up.
 
 Every condition holds for the MS-bar β and υ of the atlas. Without υ they fail from six loops on: β alone is not gradient. Six conditions at seven loops contain no seven-loop coefficient, G7.895 to G7.899 and G7.1290. Four of them constrain υ<sup>(5)</sup> and υ<sup>(6)</sup>, and two relate β coefficients up to six loops. All six hold in MS-bar.
 
-The page filters the conditions by loop order, by layer, and by coefficient or condition id (`V7.12`, `D2.3`, `u7_22`, `G7.123`). Each coefficient in a condition links to its structure in the atlas. **Copy as LaTeX** writes the β coefficient of V7.12 as `\beta_{\mathrm{V}7.12}` and υ<sup>(7)</sup><sub>22</sub> as `\upsilon^{(7)}_{22}`. In the atlas, the details pane of every coefficient gives how many conditions it enters in each layer, which ones it leads, and a link to them.
+The page filters the conditions by loop order, by the ansatz and dimension that need them, and by coefficient or condition id (`V7.12`, `D2.3`, `u7_22`, `G7.123`). Each coefficient in a condition links to its structure in the atlas. **Copy as LaTeX** writes the β coefficient of V7.12 as `\beta_{\mathrm{V}7.12}` and υ<sup>(7)</sup><sub>22</sub> as `\upsilon^{(7)}_{22}`. In the atlas, the details pane of every coefficient gives how many conditions it enters, how many of them each ansatz needs, which ones it leads, and a link to them.
 
 ## The data
 
@@ -203,9 +205,10 @@ The conditions are in [`phi4_gradient.json`](phi4_gradient.json), 7.1 MB, 1.8 MB
 | key | contents |
 | --- | --- |
 | `note`, `source` | conventions, provenance, licence |
-| `counts` | the number of conditions per loop order and layer |
+| `counts` | per loop order, the number of conditions each ansatz needs in `d=4` and in `d=4-eps` |
+| `first_needed` | per loop order, the number new at each level |
 | `names` | structure id → atlas name (`u7_22` is υ<sup>(7)</sup><sub>22</sub>) |
-| `conditions` | one record each: `id`, `L`, `metric` (`general`, `quasi-gradient` or `gradient`), `eps` (true for d = 4 − ε) and `terms` |
+| `conditions` | one record each: `id`, `L`, `first_needed_by` (the weakest ansatz that needs it: `general` for any T<sub>IJ</sub>, `quasi-gradient` or `gradient`), `eps_only` (true when only d = 4 − ε needs it) and `terms` |
 
 A term is `[coefficient, [ids]]`, with the coefficient a rational number as a string. A four-point id stands for the β coefficient of that structure and a two-point id for its υ coefficient.
 

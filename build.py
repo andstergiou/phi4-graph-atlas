@@ -54,7 +54,8 @@ META = ('id', 'L', 'kind', 'num', 'seq', 'edges', 'ext', 'stab',
 
 NOTE = (
     'Tensorial MS renormalisation of the multiscalar phi^4 beta function and '
-    'anomalous dimension, per structure, at 1 to 7 loops.  Every value is in '
+    'anomalous dimension, per structure, at 1 to 7 loops, with the antisymmetric '
+    'upsilon of the gradient-flow vector field at 5 to 7 loops.  Every value is in '
     'minimal subtraction (MS-bar).  beta, Z_lambda, '
     'gamma_phi and Zphi_minus_half are all in the O-normalisation: coefficients '
     'of the structure summed over its distinct external labellings, so '
@@ -180,12 +181,16 @@ GRAD_NOTE = (
     'The one-loop coefficient of V1.1 is 1 and is not written.  The conditions are derived order '
     'by order in the covariant form T_IJ B^J = d_I A of the gradient equation, solving at each '
     'loop order only for that order\'s metric and potential coefficients, with the lower ones the '
-    'particular solutions whose free coefficients are set to zero.  Each condition is reduced '
-    'modulo the lower-loop conditions times monomials and carries the first layer that needs it: '
-    'metric "general" (an arbitrary T_IJ), "quasi-gradient" (T_IJ = G_IJ + d_[I w_J]) or '
-    '"gradient" (a symmetric G_IJ), with eps false in d = 4 and true for the conditions that '
-    'arise only in d = 4 - epsilon.  counts gives the number per loop order and layer.  Every '
-    'condition holds for the MS-bar beta and upsilon of phi4_atlas.json.')
+    'particular solutions whose free coefficients are set to zero.  The ansaetze are nested: '
+    'gradient flow (a symmetric metric T_IJ = G_IJ) needs every condition of the quasi-gradient '
+    'form T_IJ = G_IJ + d_[I w_J], which needs every condition of an arbitrary T_IJ ("general"), '
+    'and d = 4 - epsilon needs every condition of d = 4, so gradient flow in d = 4 - epsilon needs '
+    'all of them.  first_needed_by is the weakest ansatz that already needs a condition, and '
+    'eps_only is true when only d = 4 - epsilon needs it.  counts gives, per loop order, how many '
+    'conditions each ansatz needs in d = 4 and in d = 4 - epsilon; first_needed how many are new '
+    'at each level.  Each condition is reduced modulo the lower-loop conditions times monomials '
+    'and the weaker levels.  Every condition holds for the MS-bar beta and upsilon of '
+    'phi4_atlas.json.')
 GRAD_CREDIT = 'The conditions were derived and checked by Claude Opus 5.5.'
 
 
@@ -206,6 +211,7 @@ def publish_conditions(src, data):
         'source': {'atlas': 'https://andstergiou.github.io/phi4-graph-atlas/conditions.html',
                    'repository': REPO, 'derivation': GRAD_CREDIT, 'licence': 'CC BY 4.0'},
         'counts': doc['counts'],
+        'first_needed': doc['first_needed'],
         'names': {k: names[k] for k in sorted(used, key=int)},
         'conditions': doc['conditions'],
     }

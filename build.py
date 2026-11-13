@@ -11,6 +11,13 @@ file into what the site serves:
   phi4_atlas.json  the full data set: a structures list and expressions keyed
                    by structure id, for every loop order at once.
 
+When the directory also holds the gradient-flow conditions (conditions.html and
+phi4_gradient.json, written by the same generator), it publishes them as well:
+
+  conditions.html     the conditions page, with the same doctype and charset and a
+                      header line giving its provenance and a link to the export.
+  phi4_gradient.json  the conditions, with a map from structure id to atlas name.
+
     python build.py <directory containing graph_atlas.html>
 """
 
@@ -22,6 +29,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = 'https://github.com/andstergiou/phi4-graph-atlas'
 JSON_NAME = 'phi4_atlas.json'
+GRAD_NAME = 'phi4_gradient.json'
 
 HEAD = ('<!doctype html>\n<html lang="en">\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n')
@@ -163,6 +171,75 @@ def export(data, out):
     return doc
 
 
+GRAD_NOTE = (
+    'Gradient-flow conditions of the multiscalar phi^4 beta function in MS-bar, through seven '
+    'loops, in d = 4 and d = 4 - epsilon.  Each condition is sum over terms of '
+    'coefficient * product = 0.  A term is [coefficient, [ids]]: a four-point id stands for the '
+    'beta coefficient of that structure (normalised as in phi4_atlas.json), a two-point id for '
+    'its upsilon coefficient; names maps every id to its atlas name (u7_22 is upsilon^(7)_22).  '
+    'The one-loop coefficient of V1.1 is 1 and is not written.  The conditions are derived order '
+    'by order in the covariant form T_IJ B^J = d_I A of the gradient equation, solving at each '
+    'loop order only for that order\'s metric and potential coefficients, with the lower ones the '
+    'particular solutions whose free coefficients are set to zero.  Each condition is reduced '
+    'modulo the lower-loop conditions times monomials and carries the first layer that needs it: '
+    'metric "general" (an arbitrary T_IJ), "quasi-gradient" (T_IJ = G_IJ + d_[I w_J]) or '
+    '"gradient" (a symmetric G_IJ), with eps false in d = 4 and true for the conditions that '
+    'arise only in d = 4 - epsilon.  counts gives the number per loop order and layer.  Every '
+    'condition holds for the MS-bar beta and upsilon of phi4_atlas.json.')
+GRAD_CREDIT = 'The conditions were derived and checked by Claude Opus 5.5.'
+
+
+def publish_conditions(src, data):
+    """conditions.html and phi4_gradient.json, when the generator wrote them."""
+    page = os.path.join(src, 'conditions.html')
+    grad = os.path.join(src, GRAD_NAME)
+    if not (os.path.exists(page) and os.path.exists(grad)):
+        return
+    with open(grad) as fh:
+        doc = json.load(fh)
+    names = {}
+    for e in data:
+        names[str(e['id'])] = 'u%d_%d' % (e['L'], e['ups']['index']) if 'ups' in e else e['num']
+    used = {str(f) for c in doc['conditions'] for t in c['terms'] for f in t[1]}
+    out = {
+        'note': GRAD_NOTE,
+        'source': {'atlas': 'https://andstergiou.github.io/phi4-graph-atlas/conditions.html',
+                   'repository': REPO, 'derivation': GRAD_CREDIT, 'licence': 'CC BY 4.0'},
+        'counts': doc['counts'],
+        'names': {k: names[k] for k in sorted(used, key=int)},
+        'conditions': doc['conditions'],
+    }
+    gpath = os.path.join(HERE, GRAD_NAME)
+    with open(gpath, 'w') as fh:
+        fh.write('{\n')
+        keys = list(out)
+        for i, k in enumerate(keys):
+            end = ',\n' if i < len(keys) - 1 else '\n'
+            if k == 'conditions':      # one condition per line
+                fh.write(' "conditions": [\n' + ',\n'.join('  ' + json.dumps(c, separators=(',', ':')) for c in out[k]) + '\n ]' + end)
+            else:
+                fh.write(' ' + json.dumps(k) + ': ' + json.dumps(out[k], separators=(',', ':')) + end)
+        fh.write('}\n')
+    mb = os.path.getsize(gpath) / 1048576
+    print(f'{GRAD_NAME}  ({len(doc["conditions"])} conditions, {mb:.1f} MB)')
+
+    with open(page) as fh:
+        html = fh.read()
+    if html.lstrip().startswith('<!doctype') or 'class="prov"' in html:
+        raise SystemExit('the generated conditions page changed; update build.py')
+    i = html.index('<div class="conv">')
+    j = html.index('</div>', i) + len('</div>')
+    prov = ('<div class="prov">' + GRAD_CREDIT + f' The {len(doc["conditions"])} conditions are available as '
+            f'<a href="{GRAD_NAME}" download>{GRAD_NAME}</a> ({mb:.1f} MB), each coefficient named by its '
+            f'structure id. Provenance, citation and licence (CC BY 4.0): <a href="{REPO}">'
+            'github.com/andstergiou/phi4-graph-atlas</a>.</div>')
+    html = html[:j] + '\n  ' + prov + html[j:]
+    html = HEAD + html.replace('</style>', CSS.replace(CONV_RULE, '') + '</style>', 1)
+    with open(os.path.join(HERE, 'conditions.html'), 'w') as fh:
+        fh.write(html)
+    print(f'conditions.html ({len(html) / 1048576:.1f} MB)')
+
+
 def credit(n_structures, mb):
     return (
         '<div class="prov">Graph ordering and the seven-loop input data follow '
@@ -212,6 +289,7 @@ def main():
     with open(out, 'w') as fh:
         fh.write(html)
     print(f'index.html    ({len(html) / 1048576:.1f} MB)')
+    publish_conditions(src, data)
 
 
 if __name__ == '__main__':

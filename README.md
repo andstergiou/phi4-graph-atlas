@@ -6,6 +6,8 @@ minimal subtraction (MS-bar).
 
 **→ [andstergiou.github.io/phi4-graph-atlas](https://andstergiou.github.io/phi4-graph-atlas/)**
 
+**→ [The gradient-flow conditions](https://andstergiou.github.io/phi4-graph-atlas/conditions.html)** through seven loops, on a second page.
+
 Its cubic companion is the [φ³ Graph Atlas](https://andstergiou.github.io/phi3-graph-atlas/).
 
 ## What is in it
@@ -22,6 +24,7 @@ graph and comes with
   under permuting its external indices,
 - whether the graph is primitive,
 - for the 163 asymmetric 1PI propagator structures at five to seven loops, the coefficient of the antisymmetric υ and its marked pole tables,
+- for every β and υ coefficient, the gradient-flow conditions it enters,
 - a TikZ export of the drawing exactly as it appears on screen.
 
 **Non-factorisable only** hides the structures whose tensor really splits into lower
@@ -129,6 +132,41 @@ The details pane gives υ<sup>(L)</sup><sub>m</sub> in the f-alphabet and in zet
 
 The vertices are numbered as in the tables of the calculation, in the drawing and in the graph string alike. Vertex 1 is the end of leg j and the largest number is the end of leg i; at five and six loops the number 3 is not used. The coefficient follows from the simple poles as υ = ½ Σ<sub>v</sub>(z<sup>[1]</sup><sub>1,v</sub> − z<sup>[1]</sup><sub>t,v</sub>), with t the end of leg i. These structures open on the drawing that accompanies the tables, with leg i on the left and leg j on the right. **Copy as LaTeX** gives a table as a `tabular`, and the TikZ export includes a mark that is kept. The panel can be hidden, and the page remembers the choice.
 
+## The gradient-flow conditions
+
+The [conditions page](https://andstergiou.github.io/phi4-graph-atlas/conditions.html) lists the conditions for the RG flow to be gradient, T<sub>IJ</sub>B<sup>J</sup> = ∂<sub>I</sub>A, through seven loops. B is the vector field above, β corrected by υ. There are 2058 conditions, in d = 4 and in d = 4 − ε.
+
+Each condition is a polynomial set to zero, in the form of the six-loop analysis of [arXiv:2402.17817](https://arxiv.org/abs/2402.17817). A structure name such as V7.12 or D2.3 stands for the β coefficient of that structure, normalised as everywhere in the atlas. υ<sup>(L)</sup><sub>m</sub> stands for the υ coefficient. The one-loop coefficient of V1.1 is 1 and is not written. A condition can mix loop orders. G4.2, for instance, reads
+
+    V4.13 + 2 V4.21 − 2 V2.2·V3.6 + 2 D2.3·V3.7 − 2 D2.3·V3.8 = 0
+
+The conditions are derived order by order in the covariant form of the gradient equation. At each loop order only the metric and potential coefficients of that order are solved for. The lower ones enter as the particular solutions with their free coefficients set to zero. A different choice, tested at six and seven loops, gives the same conditions.
+
+Each condition is reduced modulo the lower-loop conditions times monomials, so it carries no multiple of a lower one. The reduction also replaces a coefficient that leads a lower-loop condition wherever it would appear in a product. That is why V4.13 occurs only in G4.2.
+
+Each condition sits in the first layer that needs it:
+
+| layer | needed for |
+| --- | --- |
+| general | an arbitrary T<sub>IJ</sub>: a potential has to exist at all |
+| quasi-gradient | the form T<sub>IJ</sub> = G<sub>IJ</sub> + ∂<sub>[I</sub>w<sub>J]</sub>, beyond an arbitrary T<sub>IJ</sub> |
+| gradient | a symmetric metric G<sub>IJ</sub>, beyond the quasi-gradient form |
+
+In d = 4 − ε the same three layers follow, beyond everything in d = 4. The counts:
+
+| loops | d = 4 general | quasi-gradient | gradient | d = 4 − ε general | quasi-gradient | gradient | total |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 4 | 4 | 0 | 0 | 0 | 0 | 0 | 4 |
+| 5 | 28 | 5 | 4 | 4 | 0 | 0 | 41 |
+| 6 | 144 | 49 | 32 | 32 | 5 | 4 | 266 |
+| 7 | 899 | 391 | 191 | 176 | 54 | 36 | 1747 |
+
+Through six loops the conditions agree with those of arXiv:2402.17817, up to multiples of lower-loop conditions. In d = 4 − ε there are 41 at six loops rather than the 32 published, and the 32 lie among them. At seven loops d = 4 − ε adds 266, 230 and 176 conditions for the gradient, quasi-gradient and general metrics. These are the d = 4 counts at six, five and four loops added up.
+
+Every condition holds for the MS-bar β and υ of the atlas. Without υ they fail from six loops on: β alone is not gradient. Six conditions at seven loops contain no seven-loop coefficient, G7.895 to G7.899 and G7.1290. Four of them constrain υ<sup>(5)</sup> and υ<sup>(6)</sup>, and two relate β coefficients up to six loops. All six hold in MS-bar.
+
+The page filters the conditions by loop order, by layer, and by coefficient or condition id (`V7.12`, `D2.3`, `u7_22`, `G7.123`). Each coefficient in a condition links to its structure in the atlas. **Copy as LaTeX** writes the β coefficient of V7.12 as `\beta_{\mathrm{V}7.12}` and υ<sup>(7)</sup><sub>22</sub> as `\upsilon^{(7)}_{22}`. In the atlas, the details pane of every coefficient gives how many conditions it enters in each layer, which ones it leads, and a link to them.
+
 ## The data
 
 The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 9.4 MB, 0.9 MB gzipped —
@@ -160,6 +198,17 @@ also carry `sym`, true when the graph is symmetric under exchanging its two exte
 structures, as described above. Every structure carries `aut`, the |Aut| above (its
 symmetry factor is `1/aut`), and `prim`, the primitive flag.
 
+The conditions are in [`phi4_gradient.json`](phi4_gradient.json), 7.1 MB, 1.8 MB gzipped:
+
+| key | contents |
+| --- | --- |
+| `note`, `source` | conventions, provenance, licence |
+| `counts` | the number of conditions per loop order and layer |
+| `names` | structure id → atlas name (`u7_22` is υ<sup>(7)</sup><sub>22</sub>) |
+| `conditions` | one record each: `id`, `L`, `metric` (`general`, `quasi-gradient` or `gradient`), `eps` (true for d = 4 − ε) and `terms` |
+
+A term is `[coefficient, [ids]]`, with the coefficient a rational number as a string. A four-point id stands for the β coefficient of that structure and a two-point id for its υ coefficient.
+
 ```python
 import json, sympy
 d = json.load(open('phi4_atlas.json'))
@@ -168,6 +217,10 @@ print(d['beta'][str(v71['id'])])            # f_3/960 - 197/2048 - pi**4/14400
 print(sympy.sympify(d['gamma_phi_On']['4583']))
 s53 = next(s for s in d['structures'] if s['num'] == 'S5.3')
 print(d['upsilon'][str(s53['id'])])         # 259/4608, which is upsilon^(5)_2
+g = json.load(open('phi4_gradient.json'))
+c = next(c for c in g['conditions'] if c['id'] == 'G4.2')
+print([(q, [g['names'][str(f)] for f in fs]) for q, fs in c['terms']])
+# [('1', ['V4.13']), ('2', ['V4.21']), ('-2', ['V2.2', 'V3.6']), ...]
 ```
 
 ## Transcendentals: the f-alphabet
@@ -219,7 +272,9 @@ Schnetz's published O(N)-symmetric results. The integrals behind β and γ were 
 
 The full calculation of υ, with its marked pole tables, was performed by **Claude Fable 5.1** and **GPT-6 Astra**.
 
-If you use this atlas, please cite Schnetz's work alongside it, and for υ the paper that defines it:
+The gradient-flow conditions were derived and checked by **Claude Opus 5.5**, with an independent order-by-order solution of the gradient equation. Through six loops they reproduce arXiv:2402.17817.
+
+If you use this atlas, please cite Schnetz's work alongside it, and for υ and the gradient-flow conditions the paper that defines them:
 
 - O. Schnetz, *Seven loops φ⁴*, [arXiv:2212.03663](https://arxiv.org/abs/2212.03663).
 - O. Schnetz, *HyperlogProcedures*, version 0.8 (2025),
@@ -243,6 +298,8 @@ is otherwise self-contained — all data is inlined as JSON — and loads only
 Fonts.
 
 It is about 5.9 MB uncompressed, 0.9 MB over the wire.
+
+The conditions page is built the same way, with the conditions inlined: 7.2 MB uncompressed, 1.8 MB over the wire. The atlas page fetches [`phi4_gradient.json`](phi4_gradient.json) only when it first shows a coefficient's conditions.
 
 ## Licence
 

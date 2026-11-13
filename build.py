@@ -81,13 +81,37 @@ NOTE = (
     'beta.  Propagator structures also carry sym: whether the graph is '
     'symmetric under exchanging its two external legs.  The registry is '
     'unoriented, so an asymmetric graph appears once and stands for both '
-    'orientations.  Every structure carries aut, the order of its automorphism '
+    'orientations; those that carry upsilon are oriented as in its calculation, '
+    'and their graph strings use the vertex numbers of its marked pole tables.  '
+    'Every structure carries aut, the order of its automorphism '
     'group with the external legs held fixed and parallel lines included '
     '(the symmetry factor is 1/aut), and prim, true for a primitive graph: '
     '1PI with no UV subdivergence, so its counterterm is a single 1/epsilon '
     'pole.  For a propagator a subgraph whose contraction leaves a scaleless '
     'graph does not count, so the lowest-order propagator structure is '
-    'primitive and no other is.')
+    'primitive and no other is.  '
+    'upsilon is given for the 163 asymmetric 1PI propagator structures at five to '
+    'seven loops.  It is the coefficient of the structure in the antisymmetric '
+    'upsilon_ij of the gradient-flow vector field, B_ijkl = beta_ijkl - '
+    '(upsilon_im lambda_mjkl + perms), which is the S of arXiv:2402.17817: '
+    'upsilon_ij = upsilon (G_ji - G_ij) + ..., with G_ij the tensor of the '
+    'structure and leg i (the first entry of ext) on the end that the calculation '
+    'calls i.  upsilon is in the f-alphabet and upsilon_z in zeta notation '
+    '(z3 = zeta(3), z4 = zeta(4), ...).  upsilon_poles holds the marked pole '
+    'tables.  index is m in upsilon^(L)_m, the s^(L)_m of arXiv:2402.17817.  '
+    'labels maps the registry vertices to the vertex numbers of the table: 1 is '
+    'the end of leg j and the largest number the end of leg i.  Each row '
+    '[a, v, z^[orders[0]], ..., z^[1]] gives, in zeta notation, the counterterm '
+    'Z_av = sum_r z^[r]_av / epsilon^r of the graph with momentum entering at '
+    'the end a and leaving at the marked vertex v.  upsilon is half the sum over '
+    'v of z^[1]_1v - z^[1]_tv, with t the end of leg i.')
+
+# The page's record of upsilon -> the keys of the export.
+UPSILON = {'value': 'upsilon', 'value_z': 'upsilon_z'}
+UPSILON_POLES = ('index', 'labels', 'orders', 'rows')
+UPSILON_CREDIT = ('The full calculation of upsilon (the S of W. H. Pannell and A. Stergiou, '
+                  'Phys. Lett. B 853 (2024) 138701, arXiv:2402.17817) at five to seven loops, '
+                  'with its marked pole tables, was performed by Claude Fable 5.1 and GPT-6 Astra.')
 
 
 def extract_data(html):
@@ -112,9 +136,10 @@ def export(data, out):
                 "https://github.com/oliverschnetz/HyperlogProcedures; "
                 "seven-loop calculation: arXiv:2212.03663",
             'extraction':
-                'Structures and coefficients extracted from HyperlogProcedures and '
-                'recomputed by tensorial minimal subtraction with Claude Fable 5.1.  '
-                'All values are in minimal subtraction (MS-bar).',
+                'Structures and their beta and gamma coefficients extracted from '
+                'HyperlogProcedures and recomputed by tensorial minimal subtraction '
+                'with Claude Fable 5.1.  All values are in minimal subtraction (MS-bar).',
+            'upsilon_calculation': UPSILON_CREDIT,
             'licence': 'CC BY 4.0',
         },
         'loops': sorted(by_loop),
@@ -123,11 +148,16 @@ def export(data, out):
             'four_point': sum(1 for e in data if e['kind'] == '4'),
             'two_point': sum(1 for e in data if e['kind'] == '2'),
             'by_loop': {str(k): by_loop[k] for k in sorted(by_loop)},
+            'upsilon': sum(1 for e in data if 'ups' in e),
         },
         'structures': [{k: e[k] for k in META if k in e} for e in data],
     }
     for src, name in list(FOUR_POINT.items()) + list(TWO_POINT.items()):
         doc[name] = {str(e['id']): e[src] for e in data if src in e}
+    for src, name in UPSILON.items():
+        doc[name] = {str(e['id']): e['ups'][src] for e in data if 'ups' in e}
+    doc['upsilon_poles'] = {str(e['id']): {k: e['ups'][k] for k in UPSILON_POLES}
+                            for e in data if 'ups' in e}
     with open(out, 'w') as fh:
         json.dump(doc, fh, indent=1)
     return doc
@@ -137,9 +167,12 @@ def credit(n_structures, mb):
     return (
         '<div class="prov">Graph ordering and the seven-loop input data follow '
         "O. Schnetz's <a href=\"https://github.com/oliverschnetz/HyperlogProcedures\">"
-        'HyperlogProcedures</a> 0.8; the structures and every coefficient shown here '
+        'HyperlogProcedures</a> 0.8; the structures and their β and γ coefficients '
         'were extracted and recomputed by tensorial minimal subtraction (MS-bar) with '
-        f'Claude Fable 5.1. The full set of {n_structures} structures is available as '
+        'Claude Fable 5.1. The full calculation of υ, the S of '
+        '<a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a>, with its marked '
+        'pole tables, was performed by Claude Fable 5.1 and GPT-6 Astra. '
+        f'The full set of {n_structures} structures is available as '
         f'<a href="{JSON_NAME}" download>{JSON_NAME}</a> ({mb:.1f} MB). Provenance, '
         f'citation and licence (CC BY 4.0): <a href="{REPO}">'
         'github.com/andstergiou/phi4-graph-atlas</a>.</div>')

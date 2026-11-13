@@ -21,6 +21,7 @@ graph and comes with
 - the symmetry factor S = 1/|Aut|, and |stab| and orbit, which say how the tensor behaves
   under permuting its external indices,
 - whether the graph is primitive,
+- for the 163 asymmetric 1PI propagator structures at five to seven loops, the coefficient of the antisymmetric υ and its marked pole tables,
 - a TikZ export of the drawing exactly as it appears on screen.
 
 **Non-factorisable only** hides the structures whose tensor really splits into lower
@@ -94,7 +95,7 @@ second row branches from it, arrows fanning out to all · symmetric · asymmetri
 all each time γ only is chosen. Of the 305 propagator structures 117 are symmetric and 188 asymmetric; asymmetric
 ones first appear at five loops (5 of 12), and at seven loops they outnumber the symmetric
 160 to 70. The registry is unoriented, so an asymmetric graph appears once and stands for
-both orientations.
+both orientations. The 163 that carry υ are oriented as in its calculation (see below).
 
 Every expression in the details pane can be copied as LaTeX: hover it and a **TeX**
 button appears, putting the formula on the clipboard in standard syntax
@@ -108,7 +109,7 @@ graph into view, and the TeX buttons stay visible since there is no hover.
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph
-ids (`#431`) and coefficient names (`f_7`). Individual structures are
+ids (`#431`) and coefficient names (`f_7`). It also finds υ<sup>(7)</sup><sub>22</sub> by `u7_22` and all the structures with υ by `upsilon`. Individual structures are
 addressable: `…/#L7-789`.
 
 Conventions are stated in the page header: d = 4 − ε, λ₀ = μ^ε(λ + Z-poles), the loop
@@ -116,9 +117,21 @@ factor 1/(16π²) absorbed into λ, so the one-loop β is λ<sub>ijmn</sub>λ<su
 2 permutations with coefficient 1 and γ<sub>φ</sub> = (1/12) λ<sub>iklm</sub>λ<sub>jklm</sub>
 at two loops.
 
+## The antisymmetric υ
+
+The 163 asymmetric 1PI propagator structures at five, six and seven loops (4, 19 and 140) also carry υ<sup>(L)</sup><sub>m</sub>. This is their coefficient in the antisymmetric υ<sub>ij</sub> of the gradient-flow vector field B<sub>ijkl</sub> = β<sub>ijkl</sub> − (υ<sub>im</sub>λ<sub>mjkl</sub> + permutations). The 25 asymmetric chains carry none, so **γ only** → **asymmetric** with **non-factorisable only** lists exactly these 163.
+
+The atlas writes υ for the quantity that [arXiv:2402.17817](https://arxiv.org/abs/2402.17817) calls S, because S already names the symmetry factor and the propagator structures here. Its υ<sup>(L)</sup><sub>m</sub> is the s<sup>(L)</sup><sub>m</sub> of that paper, with the same numbering, normalisation and sign.
+
+A structure enters as υ<sub>ij</sub> = υ<sup>(L)</sup><sub>m</sub> (G<sub>ji</sub> − G<sub>ij</sub>) + …, with G<sub>ij</sub> the tensor shown. The sign depends on which end carries i. These 163 structures are therefore oriented as in the calculation of υ, with leg i on the end that it calls i. For 94 of them this exchanges i and j relative to earlier versions of the atlas. Their tensors change, but γ<sub>φ</sub> does not, since it multiplies G<sup>ij</sup> + G<sup>ji</sup>.
+
+The details pane gives υ<sup>(L)</sup><sub>m</sub> in the f-alphabet and in zeta notation. Below the drawing a panel shows the **marked pole tables**. Each row is a marked graph: momentum p enters at an end a and leaves at an internal vertex v, the marked vertex. Its counterterm in minimal subtraction is Z<sub>a,v</sub> = Σ<sub>r</sub> z<sup>[r]</sup><sub>a,v</sub>/ε<sup>r</sup>. Hovering a row rings the vertex a on the drawing and marks the vertex v, and clicking the row keeps the mark.
+
+The vertices are numbered as in the tables of the calculation, in the drawing and in the graph string alike. Vertex 1 is the end of leg j and the largest number is the end of leg i; at five and six loops the number 3 is not used. The coefficient follows from the simple poles as υ = ½ Σ<sub>v</sub>(z<sup>[1]</sup><sub>1,v</sub> − z<sup>[1]</sup><sub>t,v</sub>), with t the end of leg i. These structures open on the drawing that accompanies the tables, with leg i on the left and leg j on the right. **Copy as LaTeX** gives a table as a `tabular`, and the TikZ export includes a mark that is kept. The panel can be hidden, and the page remembers the choice.
+
 ## The data
 
-The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 9.0 MB, 0.8 MB gzipped —
+The whole set is in [`phi4_atlas.json`](phi4_atlas.json) — 9.4 MB, 0.9 MB gzipped —
 served next to the page, so it can be fetched directly:
 
 ```
@@ -134,6 +147,9 @@ It holds all loop orders in one document:
 | `structures` | one record each: `id`, `L`, `kind`, `num`, `edges`, `ext`, `stab`, `orbit`, `aut`, `prim`, `On`, `tensor`, `graph`, `onepi`, `vr`, `fac`, `sym`, `comp` |
 | `beta`, `beta_z`, `Z_lambda` | four-point expressions, keyed by structure id |
 | `Zphi_minus_half`, `gamma_phi`, `gamma_phi_On` | two-point expressions, keyed by structure id (`gamma_phi_On`: both orientations at O(N)) |
+| `upsilon`, `upsilon_z`, `upsilon_poles` | υ<sup>(L)</sup><sub>m</sub> in the f-alphabet and in zeta notation, and its marked pole tables, keyed by structure id |
+
+Each entry of `upsilon_poles` has `index` (the m of υ<sup>(L)</sup><sub>m</sub>), `labels` (registry vertex → number in the table), `orders` (the pole orders, highest first) and `rows`. A row `[a, v, z^[orders[0]], …, z^[1]]` holds the coefficients of Z<sub>a,v</sub> in zeta notation.
 
 Expressions are sympy-readable strings in `n` (the N of O(N)) and `epsilon`; `id` is unique across
 loop orders and is the registry number the atlas displays. Two reducibility flags travel with each
@@ -150,6 +166,8 @@ d = json.load(open('phi4_atlas.json'))
 v71 = next(s for s in d['structures'] if s['num'] == 'V7.1')
 print(d['beta'][str(v71['id'])])            # f_3/960 - 197/2048 - pi**4/14400
 print(sympy.sympify(d['gamma_phi_On']['4583']))
+s53 = next(s for s in d['structures'] if s['num'] == 'S5.3')
+print(d['upsilon'][str(s53['id'])])         # 259/4608, which is upsilon^(5)_2
 ```
 
 ## Transcendentals: the f-alphabet
@@ -171,6 +189,8 @@ follows (solved from Schnetz's period files, which carry both forms):
 In the zeta notation of `beta_z`: `z3`…`z11` are ζ(3)…ζ(11), and the irreducible
 multiple zeta values get their own symbols — `z3z5` = ζ(5,3), `z3z7` = ζ(7,3),
 `z533` = ζ(5,3,3). `P711` is Period[7,11], the seven-loop period that is not an MZV.
+
+`upsilon_z` gives υ in the same zeta notation. The marked pole tables use it too, as the calculation of υ does. There the even zeta values appear by name: `z4` = ζ(4) = π⁴/90 and `z6` = ζ(6) = π⁶/945.
 
 Only Lyndon words appear as generators, so a word like `f_3_3` is never written: the
 shuffle algebra is the polynomial algebra on the Lyndon words, and the reductions are
@@ -195,13 +215,16 @@ package [HyperlogProcedures](https://github.com/oliverschnetz/HyperlogProcedures
 version 0.8, and the seven-loop calculation it implements. The coefficients displayed
 here were not copied from the package: they were extracted by **Claude Fable 5.1**
 with an independent Python implementation of the forest formula, and checked against
-Schnetz's published O(N)-symmetric results. The integrals were not recomputed by AI.
+Schnetz's published O(N)-symmetric results. The integrals behind β and γ were not recomputed by AI.
 
-If you use this atlas, please cite Schnetz's work alongside it:
+The full calculation of υ, with its marked pole tables, was performed by **Claude Fable 5.1** and **GPT-6 Astra**.
+
+If you use this atlas, please cite Schnetz's work alongside it, and for υ the paper that defines it:
 
 - O. Schnetz, *Seven loops φ⁴*, [arXiv:2212.03663](https://arxiv.org/abs/2212.03663).
 - O. Schnetz, *HyperlogProcedures*, version 0.8 (2025),
   <https://github.com/oliverschnetz/HyperlogProcedures>.
+- W. H. Pannell and A. Stergiou, *Gradient properties of perturbative multiscalar RG flows to six loops*, Phys. Lett. B 853 (2024) 138701, [arXiv:2402.17817](https://arxiv.org/abs/2402.17817).
 
 No HyperlogProcedures code is redistributed here. The package is offered under
 GPL-3.0 on its repository (the 0.8 distribution itself ships no licence text); the
@@ -219,7 +242,7 @@ is otherwise self-contained — all data is inlined as JSON — and loads only
 [d3](https://d3js.org/) 7.9.0 from cdnjs (ISC licence) and two families from Google
 Fonts.
 
-It is about 5.4 MB uncompressed, 0.8 MB over the wire.
+It is about 5.9 MB uncompressed, 0.9 MB over the wire.
 
 ## Licence
 

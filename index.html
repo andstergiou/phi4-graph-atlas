@@ -749,7 +749,7 @@ function gradData(){
 }
 function gradBlock(s){
   const head = '<h3>Gradient-flow conditions</h3>';
-  const name = s.ups ? upsName(s) : s.num, q = s.ups ? 'u'+s.L+'_'+s.ups.index : s.num;
+  const name = s.ups ? upsName(s) : s.num, q = s.ups ? 'Y'+s.L+'.'+s.ups.index : s.num;
   $('grad').innerHTML = head + '<span class="muted">Loading the conditions …</span>';
   gradData().then(GD => {
     if (current !== s || !$('grad')) return;
@@ -764,7 +764,7 @@ function gradBlock(s){
     const lead = e.lead.length ? ' It leads '+e.lead.slice(0, 6).map(id => '<a href="conditions.html#'+id+'">'+id+'</a>').join(', ')+(e.lead.length > 6 ? ' and '+(e.lead.length-6)+' more' : '')+'.' : '';
     const how = e.lin === e.n ? ', always as a single term.' : e.lin === 0 ? ', always multiplied by other coefficients.'
       : ': in '+e.lin+' as a single term and in the other '+(e.n - e.lin)+' only multiplied by other coefficients.';
-    $('grad').innerHTML = head + what+' enters '+e.n+' of the '+GD.total+' conditions'+how+lead
+    $('grad').innerHTML = head + what+' enters '+e.n+' of the '+GD.total+' conditions'+(s.ups ? ' as '+q : '')+how+lead
       + ' How many of them each flow needs:'
       + '<table><thead><tr><th></th><th>any T<sub>IJ</sub></th><th>quasi-gradient</th><th>gradient</th></tr></thead><tbody>'
       + row('d = 4', n4) + row('d = 4 − ε', ne) + '</tbody></table>'

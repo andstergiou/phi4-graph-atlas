@@ -117,11 +117,11 @@ table.counts td.tot{font-weight:600}
   <h1>φ⁴ Gradient Conditions <small>of <span class="sym">β<sub>ijkl</sub></span> and <span class="sym">υ<sub>ij</sub></span> through seven loops</small></h1>
   <button class="about-toggle" id="about" type="button" aria-expanded="false">Conventions and sources</button>
   <a class="navlink" href="index.html" title="The tensor structures of β, γ and υ, with their graphs">← Graph atlas</a>
-  <div class="conv">The conditions for the multiscalar φ<sup>4</sup> flow to be gradient, T<sub>IJ</sub>B<sup>J</sup> = ∂<sub>I</sub>A, through seven loops in MS-bar. Each condition is a polynomial set to zero. A structure name such as V7.12 or D2.3 stands for the β coefficient of that structure, normalised as in the atlas, and υ<sup>(L)</sup><sub>m</sub> for the coefficient of the antisymmetric υ<sub>ij</sub> in B<sub>ijkl</sub> = β<sub>ijkl</sub> − (υ<sub>im</sub>λ<sub>mjkl</sub> + perms). The one-loop coefficient of V1.1 is 1 and is not written. Gradient flow, with a symmetric metric T<sub>IJ</sub> = G<sub>IJ</sub>, needs every condition of the quasi-gradient form T<sub>IJ</sub> = G<sub>IJ</sub> + ∂<sub>[I</sub>w<sub>J]</sub>, which needs every condition of an arbitrary T<sub>IJ</sub>, for which a potential A merely exists; and d = 4 − ε needs every condition of d = 4. Each condition is marked with the weakest of these that already needs it. The conditions are derived order by order in the covariant form of the gradient equation. At each loop order only the metric and potential coefficients of that order are solved for; the lower ones are the particular solutions with their free coefficients set to zero; a different choice, tested at six and seven loops, gives the same conditions. Each condition is reduced modulo the lower-loop conditions times monomials and the weaker levels. Through six loops the conditions agree, up to such multiples, with those of <a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a>, where d = 4 − ε gives 41 rather than 32 at six loops. Every condition holds for the MS-bar β and υ of the atlas.</div>
+  <div class="conv">The conditions for the multiscalar φ<sup>4</sup> flow to be gradient, T<sub>IJ</sub>B<sup>J</sup> = ∂<sub>I</sub>A, through seven loops in MS-bar. Each condition is a polynomial set to zero. A structure name such as V7.12 or D2.3 stands for the β coefficient of that structure, normalised as in the atlas. A name such as Y7.22 stands for the coefficient υ<sup>(7)</sup><sub>22</sub> of the antisymmetric υ<sub>ij</sub> in B<sub>ijkl</sub> = β<sub>ijkl</sub> − (υ<sub>im</sub>λ<sub>mjkl</sub> + perms). The one-loop coefficient of V1.1 is 1 and is not written. Gradient flow, with a symmetric metric T<sub>IJ</sub> = G<sub>IJ</sub>, needs every condition of the quasi-gradient form T<sub>IJ</sub> = G<sub>IJ</sub> + ∂<sub>[I</sub>w<sub>J]</sub>, which needs every condition of an arbitrary T<sub>IJ</sub>, for which a potential A merely exists; and d = 4 − ε needs every condition of d = 4. Each condition is marked with the weakest of these that already needs it. The conditions are derived order by order in the covariant form of the gradient equation. At each loop order only the metric and potential coefficients of that order are solved for; the lower ones are the particular solutions with their free coefficients set to zero; a different choice, tested at six and seven loops, gives the same conditions. Each condition is reduced modulo the lower-loop conditions times monomials and the weaker levels. Through six loops the conditions agree, up to such multiples, with those of <a href="https://arxiv.org/abs/2402.17817">arXiv:2402.17817</a>, where d = 4 − ε gives 41 rather than 32 at six loops. Every condition holds for the MS-bar β and υ of the atlas.</div>
   <div class="prov">The conditions were derived and checked by Claude Opus 5.5. The 2058 conditions are available as <a href="phi4_gradient.json" download>phi4_gradient.json</a> (7.1 MB), each coefficient named by its structure id. Provenance, citation and licence (CC BY 4.0): <a href="https://github.com/andstergiou/phi4-graph-atlas">github.com/andstergiou/phi4-graph-atlas</a>.</div>
   <div class="rowbreak"></div>
   <div class="tabs" id="tabs" role="tablist" aria-label="Loop order"></div>
-  <input id="search" type="search" placeholder="Filter: V7.12, D2.3, u7_22, G7.123 …" aria-label="Filter conditions by coefficient or id">
+  <input id="search" type="search" placeholder="Filter: V7.12, D2.3, Y7.22, G7.123 …" aria-label="Filter conditions by coefficient or id">
   <div class="kinds" id="metrics" role="group" aria-label="The flow the conditions are needed for">
     <span class="lab">needed for</span>
     <button data-v="gradient" aria-pressed="true" title="A symmetric metric G_IJ: every condition">gradient flow</button>
@@ -161,13 +161,12 @@ function copy(text, msg){
 
 // ---- names ----
 const isUps = id => NM[id][1] === '2';
-const plain = id => isUps(id) ? 'u'+NM[id][0]+'_'+NM[id][3] : NM[id][2];
-const html = id => isUps(id) ? 'υ<sup>('+NM[id][0]+')</sup><sub>'+NM[id][3]+'</sub>' : NM[id][2];
-const texN = id => isUps(id) ? '\\upsilon^{('+NM[id][0]+')}_{'+NM[id][3]+'}'
+const plain = id => isUps(id) ? 'Y'+NM[id][0]+'.'+NM[id][3] : NM[id][2];     // Y7.22 is upsilon^(7)_22
+const texN = id => isUps(id) ? '\\upsilon_{\\mathrm{Y}'+NM[id][0]+'.'+NM[id][3]+'}'
                              : '\\beta_{\\mathrm{'+NM[id][2][0]+'}'+NM[id][2].slice(1)+'}';
-const link = id => '<a href="index.html#L'+NM[id][0]+'-'+id+'" title="'+(isUps(id) ? 'υ of '+NM[id][2] : 'β of '+NM[id][2])+' in the atlas">'+html(id)+'</a>';
-function norm(w){                     // u7_22, υ7_22, u(7)_22, υ(7)_22 -> u7_22
-  return w.replace(/^υ/, 'u').replace(/^u\((\d+)\)_/, 'u$1_');
+const link = id => '<a href="index.html#L'+NM[id][0]+'-'+id+'" title="'+(isUps(id) ? 'υ of '+NM[id][2] : 'β of '+NM[id][2])+' in the atlas">'+plain(id)+'</a>';
+function norm(w){                     // y7.22, and the older u7_22, υ7_22, u(7)_22, υ(7)_22 -> y7.22
+  return w.replace(/^[uυy]\(?(\d+)\)?[._](\d+)$/, 'y$1.$2');
 }
 
 // ---- terms ----

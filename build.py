@@ -177,7 +177,7 @@ GRAD_NOTE = (
     'loops, in d = 4 and d = 4 - epsilon.  Each condition is sum over terms of '
     'coefficient * product = 0.  A term is [coefficient, [ids]]: a four-point id stands for the '
     'beta coefficient of that structure (normalised as in phi4_atlas.json), a two-point id for '
-    'its upsilon coefficient; names maps every id to its atlas name (Y7.22 is upsilon^(7)_22).  '
+    'its upsilon coefficient; names maps every id to its atlas name (Y7.105 is upsilon^(7)_105).  '
     'The one-loop coefficient of V1.1 is 1 and is not written.  The conditions are derived order '
     'by order in the covariant form T_IJ B^J = d_I A of the gradient equation, solving at each '
     'loop order only for that order\'s metric and potential coefficients, with the lower ones the '

@@ -112,7 +112,7 @@ graph into view, and the TeX buttons stay visible since there is no hover.
 The graph drawings are editable: drag a vertex to place it (it stays pinned), drag a
 handle to curve a line, and the layout you arrive at is kept in the browser per
 structure. The filter box takes structure numbers (`V6.12`, `D5.3`, `S2.1`), graph
-ids (`#431`) and coefficient names (`f_7`). It also finds υ<sup>(7)</sup><sub>22</sub> by `u7_22` and all the structures with υ by `upsilon`. Individual structures are
+ids (`#431`) and coefficient names (`f_7`). It also finds υ<sup>(7)</sup><sub>105</sub> by `Y7.105`, its name in the gradient conditions, or by `u7_105`, and all the structures with υ by `upsilon`. Individual structures are
 addressable: `…/#L7-789`.
 
 Conventions are stated in the page header: d = 4 − ε, λ₀ = μ^ε(λ + Z-poles), the loop

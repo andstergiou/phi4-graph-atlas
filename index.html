@@ -382,8 +382,8 @@ for (const o of orders){
   tabs.appendChild(b);
 }
 function renderTabs(){ [...tabs.children].forEach((b,i)=>b.setAttribute('aria-pressed', orders[i]===L)); }
-// search words for the coefficient upsilon^(L)_m: u7_23, υ7_23, u(7)_23, υ(7)_23, upsilon
-function upsKeys(s){ const l = s.L, m = s.ups.index; return ['u','υ'].map(c => c+l+'_'+m+' '+c+'('+l+')_'+m).join(' ')+' upsilon antisymmetric'; }
+// search words for the coefficient upsilon^(L)_m: Y7.23 (its name in the conditions), u7_23, υ7_23, u(7)_23, υ(7)_23, upsilon
+function upsKeys(s){ const l = s.L, m = s.ups.index; return 'Y'+l+'.'+m+' '+['u','υ'].map(c => c+l+'_'+m+' '+c+'('+l+')_'+m).join(' ')+' upsilon antisymmetric'; }
 function matches(s){
   if (kindOnly && s.kind !== kindOnly) return false;
   if (kindOnly === '2' && symOnly && (s.sym ? 'sym' : 'asym') !== symOnly) return false;

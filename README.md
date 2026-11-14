@@ -136,7 +136,7 @@ The vertices are numbered as in the tables of the calculation, in the drawing an
 
 The [conditions page](https://andstergiou.github.io/phi4-graph-atlas/conditions.html) lists the conditions for the RG flow to be gradient, T<sub>IJ</sub>B<sup>J</sup> = ∂<sub>I</sub>A, through seven loops. B is the vector field above, β corrected by υ. There are 2058 conditions, in d = 4 and in d = 4 − ε.
 
-Each condition is a polynomial set to zero, in the form of the six-loop analysis of [arXiv:2402.17817](https://arxiv.org/abs/2402.17817). A structure name such as V7.12 or D2.3 stands for the β coefficient of that structure, normalised as everywhere in the atlas. A name such as Y7.105 stands for the υ coefficient υ<sup>(7)</sup><sub>105</sub>. The one-loop coefficient of V1.1 is 1 and is not written. A condition can mix loop orders. G4.2, for instance, reads
+Each condition is a polynomial set to zero, in the form of the six-loop analysis of [arXiv:2402.17817](https://arxiv.org/abs/2402.17817). A structure name such as V7.2 or D2.3 stands for the β coefficient of that structure, normalised as everywhere in the atlas. A name such as Y7.105 stands for the υ coefficient υ<sup>(7)</sup><sub>105</sub>. The one-loop coefficient of V1.1 is 1 and is not written. A condition can mix loop orders. G4.2, for instance, reads
 
     V4.13 + 2 V4.21 − 2 V2.2·V3.6 + 2 D2.3·V3.7 − 2 D2.3·V3.8 = 0
 
@@ -167,7 +167,7 @@ Through six loops the conditions agree with those of arXiv:2402.17817, up to mul
 
 Every condition holds for the MS-bar β and υ of the atlas. Without υ they fail from six loops on: β alone is not gradient. Six conditions at seven loops contain no seven-loop coefficient, G7.895 to G7.899 and G7.1290. Four of them constrain υ<sup>(5)</sup> and υ<sup>(6)</sup>, and two relate β coefficients up to six loops. All six hold in MS-bar.
 
-The page filters the conditions by loop order, by the ansatz and dimension that need them, and by coefficient or condition id (`V7.12`, `D2.3`, `Y7.105`, `G7.123`). Each coefficient in a condition links to its structure in the atlas. **Copy as LaTeX** writes the β coefficient of V7.12 as `\beta_{\mathrm{V}7.12}` and Y7.105 as `\upsilon_{\mathrm{Y}7.105}`. In the atlas, the details pane of every coefficient gives how many conditions it enters, how many of them each ansatz needs, which ones it leads, and a link to them.
+The page filters the conditions by loop order, by the ansatz and dimension that need them, and by coefficient or condition id (`V7.2`, `D2.3`, `Y7.105`, `G7.123`). Each coefficient in a condition links to its structure in the atlas. **Copy as LaTeX** writes the β coefficient of V7.2 as `\beta_{\mathrm{V}7.2}` and Y7.105 as `\upsilon_{\mathrm{Y}7.105}`. In the atlas, the details pane of every coefficient gives how many conditions it enters, how many of them each ansatz needs, which ones it leads, and a link to them.
 
 ## The data
 
